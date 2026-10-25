@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4ea8e6">
+<meta name="description" content="孙习冉的作品集 · 运营岗 · 5 个项目：校园私域生态运营 / FORAGE 全渠道营销 / 抖音猫咪赛道商业化 / FORAGE 沃尔玛副商人 / 平台端×品牌端行业研究">
+<title>孙习冉的作品集 · Portfolio</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌞</text></svg>">
+<style>
+/* ============ 浅天蓝 · 简约大气版 ============ */
+:root{
+  --bg1:#f4f7fa;
+  --bg2:#f8fafc;
+  --line:#e2e8ef;
+  --sidebar:#ffffff;
+  --sidebar-text:#5b7186;
+  --sidebar-active:#f1f6fb;
+  --card:#ffffff;
+  --text:#22303c;
+  --text-dim:#7a8896;
+  --accent:#4ea8e6;
+  --accent-deep:#2b83c4;
+  --accent-soft:#eef5fb;
+  --radius:14px;
+  --shadow:0 1px 2px rgba(20,45,70,.05), 0 6px 18px rgba(20,45,70,.05);
+  --shadow-sm:0 1px 3px rgba(20,45,70,.06);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{
+  font-family:-apple-system,"PingFang SC",system-ui,sans-serif;
+  color:var(--text); min-height:100vh;
+  background:
+    radial-gradient(110% 55% at 50% 0%, #e8f1f9 0%, rgba(232,241,249,0) 62%),
+    linear-gradient(180deg,#f4f7fa,#f7f9fb);
+  background-attachment:fixed;
+}
+.app{display:flex; min-height:100vh}
+
+/* 侧边栏 */
+.side{width:82px;flex-shrink:0;background:var(--sidebar);padding:20px 8px calc(20px + env(safe-area-inset-bottom,0));
+  border-right:1px solid var(--line);display:flex;flex-direction:column;position:relative}
+.side .brand{text-align:center;margin-bottom:20px;position:relative}
+.side .brand .logo{font-size:25px;line-height:1;width:42px;height:42px;margin:0 auto 8px;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#5aa6dd,var(--accent-deep));border-radius:11px;
+  box-shadow:0 3px 10px rgba(46,143,206,.22)}
+.side .brand .name{font-size:11px;color:var(--sidebar-text);font-weight:700;letter-spacing:.5px}
+.side .nav{display:flex;flex-direction:column;gap:6px;flex:1;position:relative}
+.nav a{position:relative;display:block;text-align:center;padding:11px 2px;border-radius:10px;
+  text-decoration:none;color:var(--sidebar-text);font-size:11px;line-height:1.3;cursor:pointer;
+  transition:background .22s,color .22s}
+.nav a .ico{display:block;font-size:19px;line-height:22px;margin-bottom:3px}
+.nav a.nav-2l{font-size:10.5px;line-height:1.35;padding-top:9px;padding-bottom:9px}
+.nav a.on{background:var(--sidebar-active);color:var(--accent-deep)}
+.nav a.on::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);
+  width:3px;height:24px;border-radius:0 3px 3px 0;background:linear-gradient(var(--accent),var(--accent-deep))}
+
+/* 内容区 */
+.main{flex:1;min-width:0;padding:20px 15px calc(30px + env(safe-area-inset-bottom,0));
+  display:flex;flex-direction:column;gap:15px;max-width:760px;margin:0 auto}
+
+.topbar{display:flex;align-items:center;gap:10px;padding:13px 17px;border-radius:12px;
+  background:linear-gradient(120deg,#3f9ad8,var(--accent-deep));color:#fff;
+  box-shadow:0 4px 14px rgba(46,143,206,.18)}
+.topbar .tb-ico{font-size:19px}
+.topbar .tb-t{font-size:16px;font-weight:700;letter-spacing:.5px;position:relative}
+.topbar .tb-sub{font-size:12px;opacity:.85;margin-left:auto;position:relative}
+
+.card{position:relative;background:var(--card);border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:19px;border:1px solid var(--line);
+  animation:rise .42s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:none}}
+@media (hover:hover){.card:hover{box-shadow:0 2px 6px rgba(20,45,70,.07), 0 10px 26px rgba(20,45,70,.08)}}
+.card h2{font-size:17px;margin-bottom:14px;display:flex;align-items:center;gap:9px;letter-spacing:.3px}
+.card h2 .hico{width:28px;height:28px;flex-shrink:0;border-radius:8px;display:flex;align-items:center;justify-content:center;
+  font-size:15px;background:#f2f6fa;border:1px solid var(--line)}
+.hint{font-size:12px;color:var(--text-dim);margin-top:10px;line-height:1.65}
+
+/* hero */
+.hero{position:relative;overflow:hidden;display:flex;gap:16px;align-items:center;
+  background:#fff;border:1px solid var(--line);padding:16px}
+.hero::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:linear-gradient(180deg,var(--accent),var(--accent-deep))}
+.hero .ava{position:relative;width:54px;height:54px;flex-shrink:0;border-radius:50%;
+  background:linear-gradient(135deg,#5aa6dd,var(--accent-deep));color:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:24px;box-shadow:0 3px 10px rgba(46,143,206,.22)}
+.hero .who .nm{font-size:22px;font-weight:700;letter-spacing:.5px}
+.hero .who .role{font-size:13px;color:var(--text-dim);margin-top:4px}
+.hero .who .tag{font-size:13px;color:var(--accent-deep);margin-top:6px;font-weight:600}
+/* hero：合并求职意向 + 今日一句 */
+.hero{flex-direction:column;align-items:stretch;gap:13px}
+.h-top{display:flex;gap:15px;align-items:center;position:relative}
+.h-kv{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;position:relative}
+.h-i{background:#fafcfd;border:1px solid var(--line);border-radius:9px;
+  padding:8px 11px;display:flex;flex-direction:column;gap:3px}
+.h-i .k{font-size:11px;color:var(--text-dim);letter-spacing:.3px}
+.h-i .v{font-size:13.5px;font-weight:600;color:var(--text);line-height:1.4}
+.h-i.wide{grid-column:1/-1}
+.h-daily{position:relative;overflow:hidden;border-radius:9px;padding:13px 14px;
+  background:#f7fafd;border:1px solid var(--line)}
+.h-daily .d-q{font-size:14.5px}
+
+/* 求职意向 */
+.kv{display:flex;flex-direction:column;gap:11px}
+.kv-i{display:flex;gap:12px;align-items:baseline}
+.kv-k{font-size:12px;color:var(--text-dim);width:60px;flex-shrink:0}
+.kv-v{font-size:14px;font-weight:500;line-height:1.55}
+.mailbtn{font-size:13px;padding:6px 13px;border-radius:7px;border:1px solid var(--accent);
+  background:var(--accent-soft);color:var(--accent-deep);font-family:inherit;font-weight:600;cursor:pointer}
+.mailbtn:active{transform:scale(.96)}
+.mailval{display:none;font-size:14px;font-weight:600;color:var(--accent-deep);word-break:break-all}
+.mailval.show{display:block}
+.mailval a{color:var(--accent-deep);text-decoration:none}
+
+/* 今日一句 */
+.daily .d-top{display:flex;align-items:center;gap:8px;margin-bottom:11px}
+.daily .d-lbl{font-size:11px;color:var(--accent-deep);font-weight:600;letter-spacing:.5px}
+.daily .d-date{font-size:11px;color:var(--text-dim);margin-left:auto}
+.daily .d-tag{display:inline-block;font-size:11px;padding:3px 9px;border-radius:5px;background:var(--accent-soft);
+  color:var(--accent-deep);box-shadow:inset 0 0 0 1px var(--line)}
+.daily .d-q{font-size:15px;line-height:1.75;margin-top:11px;font-weight:500}
+.daily .d-foot{font-size:11px;color:var(--text-dim);margin-top:11px}
+
+/* 数据条 */
+.stat-row{display:flex;gap:11px}
+.stat{flex:1;text-align:center;padding:14px 0 12px;border-radius:9px;
+  background:#f7fafd;border:1px solid var(--line)}
+.stat .sico{font-size:22px;margin-bottom:4px}
+.stat .num{font-size:25px;font-weight:700;color:var(--accent-deep);font-variant-numeric:tabular-nums}
+.stat .cap{font-size:12px;color:var(--text-dim);margin-top:2px}
+
+/* ===== 项目卡（整站视觉重心） ===== */
+.proj{padding:22px 20px}
+.p-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.src{font-size:11px;padding:4px 9px;border-radius:5px;font-weight:700;letter-spacing:.3px}
+.src-real{background:#e3f4ea;color:#1d7a45;box-shadow:inset 0 0 0 1px rgba(29,122,69,.22)}
+.src-study{background:#eef1f5;color:#5a6b7c;box-shadow:inset 0 0 0 1px rgba(90,107,124,.20)}
+.src-sim{background:#fdf0e0;color:#96631a;box-shadow:inset 0 0 0 1px rgba(150,99,26,.22)}
+.p-meta{font-size:11px;color:var(--text-dim);margin-left:auto}
+.p-head{margin-bottom:14px}
+.p-four{font-size:26px;font-weight:800;letter-spacing:1.5px;line-height:1.2;color:var(--accent-deep)}
+.p-name{font-size:15px;font-weight:600;margin-top:5px;
+  display:flex;align-items:baseline;flex-wrap:wrap;gap:5px 9px;white-space:normal}
+.p-ncn{font-size:15px;font-weight:700;color:var(--text);white-space:normal;overflow-wrap:break-word;word-break:break-word}
+.p-en{font-size:11.5px;font-weight:500;color:var(--text-dim);white-space:normal;overflow-wrap:break-word;word-break:break-word}
+@media(max-width:400px){.p-name{font-size:14px}.p-ncn{font-size:13.5px}
+  .tl-t{font-size:12.5px}.tl-cn{font-size:10.5px}}
+/* 窄屏：长英文项目名改为自然折行，不再被截断（中英文同一段内连排，不单独拐行） */
+@media(max-width:480px){
+  .p-name{display:block;line-height:1.5}
+  .p-en{display:inline;margin:0 0 0 8px;font-size:11px;line-height:1.5}
+  .p-ncn{display:inline;font-size:14px;font-weight:700;line-height:1.5}
+  .tl-t{display:block;flex-wrap:wrap;white-space:normal;gap:0;line-height:1.5}
+  .tl-en{display:inline;white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:break-word;word-break:break-word}
+  .tl-cn{display:inline;margin-left:5px;font-size:10.5px}
+  .p-sub{margin-top:6px}
+}
+.p-sub{font-size:12px;color:var(--text-dim);margin-top:3px;line-height:1.5}
+.p-cal{font-size:11px;color:#96631a;margin-top:7px;line-height:1.55;
+  background:#fdf6ec;border-radius:8px;padding:6px 9px}
+
+.metrics{display:flex;gap:9px;margin-bottom:13px}
+.m{flex:1;text-align:center;padding:11px 4px 9px;border-radius:9px;
+  background:#f7fafd;border:1px solid var(--line)}
+.m-num{font-size:21px;font-weight:800;color:var(--accent-deep);font-variant-numeric:tabular-nums;line-height:1.15}
+.m-cap{font-size:11px;color:var(--text-dim);margin-top:3px;line-height:1.35}
+.m-note{font-size:9px;color:#a08a6a;margin-top:2px}
+
+.star{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+.sr{display:flex;gap:10px;align-items:flex-start}
+.sr-k{flex-shrink:0;width:34px;font-size:11px;font-weight:700;color:var(--accent-deep);text-align:center;
+  padding:3px 0;border-radius:5px;background:var(--accent-soft);border:1px solid var(--line);margin-top:1px}
+.sr-v{font-size:13px;line-height:1.7;color:#3c4a58}
+.sr-v b{color:var(--accent-deep);font-weight:700}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}
+.tags span{font-size:12px;padding:4px 10px;border-radius:5px;background:var(--accent-soft);
+  color:var(--accent-deep);font-weight:500;box-shadow:inset 0 0 0 1px rgba(78,168,230,.25)}
+.p-enter{width:100%;padding:12px;border:1px solid var(--line);border-radius:9px;background:#fafcfd;
+  color:var(--accent-deep);font-size:14px;font-weight:600;font-family:inherit;cursor:pointer;transition:background .2s}
+.p-enter:active{background:var(--accent-soft)}
+
+/* 时间段 */
+.p-time{font-size:11px;color:#5c7c95;background:#f3f8fc;border-radius:5px;padding:4px 10px;
+  box-shadow:inset 0 0 0 1px var(--line);white-space:nowrap}
+
+/* 附件：类型一眼分清 */
+.fkind{flex-shrink:0;width:44px;text-align:center;font-size:10px;font-weight:800;letter-spacing:.2px;
+  padding:6px 0;border-radius:7px;color:#fff;line-height:1.15}
+.k-ppt{background:linear-gradient(135deg,#e8703a,#c9531f)}
+.k-word{background:linear-gradient(135deg,#4a90d9,#2b6cb0)}
+.k-xls{background:linear-gradient(135deg,#3aa76d,#1f7a4d)}
+.k-video{background:linear-gradient(135deg,#8b6cd9,#5f47a8)}
+.k-cert{background:linear-gradient(135deg,#e0a93a,#c08312)}
+.k-img{background:linear-gradient(135deg,#4ea8e6,#2e8fce)}
+.fchip .fi{font-size:19px}
+
+/* 卡片内就地展开（不再跳层） */
+.fcap{font-size:12px;color:var(--text-dim);font-weight:600;margin:4px 0 9px;display:flex;align-items:center;gap:6px}
+.fcap::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+.acc-btn{width:100%;padding:11px;border:1px solid var(--line);border-radius:9px;background:#fafcfd;
+  color:var(--accent-deep);font-size:13.5px;font-weight:600;font-family:inherit;cursor:pointer}
+.acc-btn:active{background:var(--accent-soft)}
+.acc-body{display:none;margin-top:10px;flex-direction:column;gap:9px}
+.acc-body.open{display:flex}
+.acc-item{border:1px solid var(--line);border-radius:9px;padding:12px 13px;background:#fafcfd}
+.acc-item .ai-t{font-size:13.5px;font-weight:700;color:var(--accent-deep);display:flex;gap:7px;align-items:flex-start}
+.acc-item .ai-d{font-size:12.5px;line-height:1.75;color:#3c4a58;margin-top:6px}
+.acc-item .ai-n{font-size:11px;color:var(--text-dim);margin-top:7px}
+
+/* 我的职责（负责 / 做了 / 产出） */
+.p-duty{border:1px solid var(--line);border-radius:9px;background:#fafcfd;padding:10px 12px;
+  display:flex;flex-direction:column;gap:7px}
+.pd-r{display:flex;gap:9px;font-size:12.5px;line-height:1.7;color:#3c4a58}
+.pd-k{flex-shrink:0;width:46px;height:20px;line-height:18px;text-align:center;
+  font-size:11px;font-weight:700;color:var(--accent-deep);background:#e9f4fd;
+  border:1px solid var(--line);border-radius:5px}
+.pd-v{flex:1;min-width:0}
+.pd-v b{color:var(--accent-deep)}
+
+/* 我的优势（带证明） */
+.adv{border:1px solid var(--line);border-radius:9px;padding:13px 14px;margin-bottom:10px;background:#fafcfd}
+.adv:last-child{margin-bottom:0}
+.adv-h{display:flex;align-items:center;gap:8px}
+.adv-dir{font-size:10px;font-weight:700;letter-spacing:.4px;color:var(--accent-deep);
+  background:#e9f4fd;border-radius:6px;padding:2.5px 7px;flex-shrink:0;
+  box-shadow:inset 0 0 0 1px rgba(46,143,206,.18)}
+.adv-k{font-size:14.5px;font-weight:800;letter-spacing:.6px;color:var(--accent-deep);
+  min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.adv-e2{font-size:10px;font-weight:600;color:#8fa6bb;letter-spacing:.3px;
+  min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  padding:2px 7px;border-radius:5px;background:#f2f7fb;border:1px solid var(--line)}
+.adv-dir.dir-gen{color:#5a7d94;background:#f2f7fb;box-shadow:inset 0 0 0 1px var(--line)}
+.adv-d{font-size:12.5px;line-height:1.8;color:#3c4a58;margin-top:8px}
+.adv-d b{color:var(--accent-deep)}
+.adv-e{font-size:11px;color:var(--text-dim);margin-top:8px;padding-top:7px;border-top:1px dashed var(--line);line-height:1.65}
+
+/* 方法论导图墙 */
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:4px}
+.mgrid figure{margin:0;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:#fff;cursor:zoom-in}
+.mgrid img{width:100%;display:block}
+.mgrid figcaption{font-size:11px;padding:7px 8px;color:var(--text-dim);font-weight:600;text-align:center;
+  background:#fafcfd;border-top:1px solid var(--line);line-height:1.4}
+
+/* 成长轨迹 */
+.tl{position:relative;padding-left:22px;margin-top:4px}
+.tl::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:2px;
+  background:linear-gradient(180deg,var(--accent),#d8ecfa)}
+.tl-item{position:relative;padding-bottom:16px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:"";position:absolute;left:-20px;top:5px;width:9px;height:9px;border-radius:50%;
+  background:#fff;border:2.5px solid var(--accent)}
+.tl-date{font-size:11px;color:var(--accent-deep);font-weight:600}
+.tl-t{font-size:14px;font-weight:500;margin-top:2px;
+  display:flex;align-items:baseline;flex-wrap:nowrap;gap:7px;white-space:nowrap}
+.tl-en{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tl-cn{font-size:11.5px;font-weight:400;color:var(--text-dim);white-space:nowrap;flex-shrink:0}
+.tl-d{font-size:12px;color:var(--text-dim);margin-top:4px;line-height:1.65}
+
+/* 锚点导航 */
+.anchor{display:flex;flex-wrap:wrap;gap:7px 8px;padding:2px 0 1px}
+.anchor a{font-size:12px;padding:7px 13px;border-radius:7px;white-space:nowrap;border:1px solid var(--line);
+  background:#fafcfd;color:var(--text-dim);text-decoration:none}
+.anchor a:active{background:var(--accent-soft);color:var(--accent-deep);border-color:var(--accent)}
+
+/* 技能 */
+.sk-grp{margin-bottom:14px}
+.sk-grp:last-child{margin-bottom:0}
+.sk-h{display:flex;align-items:center;gap:8px;margin-bottom:9px}
+.sk-h .t{font-size:14px;font-weight:700}
+.sk-h .n{font-size:11px;color:var(--text-dim);margin-left:auto}
+.sk-list{display:flex;flex-wrap:wrap;gap:7px}
+.sk{font-size:12px;padding:6px 11px;border-radius:6px;background:#f8fafb;color:#3c4a58;
+  border:1px solid var(--line);line-height:1.5}
+.sk.core{background:#eef5fb;color:var(--accent-deep);font-weight:600;
+  border-color:#cadfef}
+.sk .ev{display:block;font-size:10px;color:var(--text-dim);font-weight:400;margin-top:1px}
+.sk.core .ev{color:#5c7c95}
+.sk2-list{display:flex;flex-wrap:wrap;gap:9px;margin-top:2px}
+.sk2{border:1px solid var(--line);border-radius:9px;padding:9px 11px;background:#fafcfd;
+  flex:1 1 200px;min-width:0}
+.sk2 b{display:block;font-size:13px;color:var(--accent-deep);margin-bottom:3px;line-height:1.3}
+.sk2 span{font-size:11.5px;color:#3c4a58;line-height:1.6}
+.sk2.core{background:#eef5fb;border-color:#cadfef}
+
+/* 方法论 */
+.mth{border:1px solid var(--line);border-radius:9px;padding:13px 14px;margin-bottom:10px;background:#fafcfd}
+.mth:last-child{margin-bottom:0}
+.mth-t{font-size:14px;font-weight:700;color:var(--accent-deep)}
+.mth-d{font-size:12px;color:#3c4a58;line-height:1.7;margin-top:6px}
+.flow{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.flow span{font-size:11px;padding:4px 9px;border-radius:5px;background:var(--accent-soft);color:var(--accent-deep)}
+.flow i{font-style:normal;color:#9db6c9;align-self:center;font-size:12px}
+
+/* 证书 */
+.cert{display:flex;gap:12px;align-items:center;border:1px solid var(--line);border-radius:9px;
+  padding:12px;background:#fafcfd;margin-bottom:9px}
+.cert:last-child{margin-bottom:0}
+.cert .ci{font-size:26px}
+.cert .cn{flex:1;min-width:0}
+.cert .cn .n{font-size:13px;font-weight:600}
+.cert .cn .c{font-size:11px;color:var(--text-dim);margin-top:3px;font-family:ui-monospace,monospace}
+.cert button{font-size:12px;padding:7px 13px;border-radius:7px;border:none;font-family:inherit;color:#fff;
+  background:var(--accent-deep)}
+
+/* 附件 chip */
+.files{display:flex;flex-direction:column;gap:9px}
+.fchip{display:flex;align-items:center;gap:11px;padding:11px 13px;border:1px solid var(--line);
+  border-radius:9px;background:#fbfcfd}
+.fchip .fi{font-size:23px}
+.fchip .fn{flex:1;min-width:0}
+.fchip .fn .n{font-size:14px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fchip .fn .s{font-size:11px;color:var(--text-dim);margin-top:3px}
+.fchip .act{font-size:13px;color:#fff;background:var(--accent-deep);
+  padding:7px 14px;border-radius:7px;border:none;font-family:inherit;text-decoration:none}
+.fchip .act:active{transform:scale(.94)}
+.fchip .acts{display:flex;gap:6px;flex-shrink:0;align-items:center}
+.fchip .act.ghost{background:#fff;color:var(--accent-deep);border:1px solid var(--line);box-shadow:none}
+
+/* 渠道数据表：卡片流，手机上竖着排完整显示，不用横向滑 */
+.dt{margin-top:9px;display:grid;grid-template-columns:1fr;gap:9px}
+@media(min-width:700px){.dt{grid-template-columns:1fr 1fr}}
+@media(min-width:1080px){.dt{grid-template-columns:1fr 1fr 1fr}}
+.dt-c{border:1px solid var(--line);border-radius:9px;background:#fff;overflow:hidden;
+  box-shadow:0 1px 3px rgba(20,45,70,.05)}
+.dt-c.star{border-color:#a9d8f5;box-shadow:0 3px 12px rgba(46,143,206,.16)}
+.dt-h{display:flex;align-items:center;justify-content:space-between;gap:8px;
+  padding:9px 11px;background:#f4f8fc;border-bottom:1px solid var(--line)}
+.dt-n{font-size:13.5px;font-weight:700;color:#17557f;line-height:1.3}
+.dt-b{font-size:10.5px;font-weight:600;color:#fff;background:var(--accent-deep);
+  padding:2px 7px;border-radius:5px;white-space:nowrap;flex-shrink:0}
+.dt-raw{display:flex;flex-wrap:wrap;gap:1px;padding:8px 6px 4px}
+.dt-raw .dt-i{flex:1 1 30%;min-width:78px}
+.dt-kpi{display:flex;gap:1px;padding:4px 6px 8px;border-top:1px dashed #e2eef7;margin-top:3px}
+.dt-kpi .dt-i{flex:1 1 0;min-width:0}
+.dt-i{text-align:center;padding:4px 2px;border-radius:7px}
+.dt-i b{display:block;font-size:13px;font-weight:700;color:#263845;font-variant-numeric:tabular-nums;line-height:1.35}
+.dt-i span{display:block;font-size:10px;color:var(--text-dim);margin-top:2px}
+.dt-i.hl{background:#e6f3fd}
+.dt-i.hl b{color:#17557f}
+.dt-sum{padding:8px 11px 9px;font-size:11.5px;color:var(--text-dim);line-height:1.6}
+.dt-note{font-size:11px;color:var(--text-dim);line-height:1.7;margin-top:7px;padding:0 2px}
+
+/* 面板（二三级展开） */
+.panel{position:fixed;inset:0;z-index:100;background:var(--bg2);display:flex;flex-direction:column;
+  transform:translateX(100%);transition:transform .3s ease;overflow:hidden}
+.panel.open{transform:none}
+.p-head{background:var(--sidebar);border-bottom:1px solid var(--line);padding:12px 14px;
+  display:flex;align-items:center;gap:10px;position:relative}
+.p-head::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-deep))}
+.p-back{width:34px;height:34px;border-radius:10px;border:1px solid var(--line);background:#f7fbff;
+  font-size:17px;line-height:1;color:var(--accent-deep);flex-shrink:0;font-family:inherit;cursor:pointer}
+.p-crumb{flex:1;min-width:0}
+.p-crumb .c1{font-size:10px;color:var(--text-dim);letter-spacing:.3px}
+.p-crumb .c2{font-size:15px;font-weight:700;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.p-body{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:15px 14px calc(30px + env(safe-area-inset-bottom,0));
+  display:flex;flex-direction:column;gap:13px;max-width:760px;margin:0 auto;width:100%}
+.p-body .card{animation:none}
+.p-sec{border:1px solid var(--line);border-radius:12px;padding:13px 14px;background:#fafcff}
+.p-sec h3{font-size:14px;font-weight:700;color:var(--accent-deep);margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.p-sec p{font-size:13px;line-height:1.75;color:#3c4a58}
+.sub-card{border:1px solid var(--line);border-radius:14px;background:#fff;padding:15px;
+  box-shadow:var(--shadow-sm);cursor:pointer;transition:transform .2s}
+.sub-card:active{transform:scale(.99)}
+.sub-card .sc-t{font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px}
+.sub-card .sc-t .go{margin-left:auto;color:var(--accent);font-size:15px}
+.sub-card .sc-d{font-size:12px;color:var(--text-dim);line-height:1.7;margin-top:7px}
+.sub-card .sc-n{font-size:11px;color:var(--accent-deep);margin-top:8px;font-weight:600}
+
+/* 图片查看 */
+.mm{width:100%;border-radius:12px;border:1px solid var(--line);cursor:zoom-in;display:block;background:#fff}
+.lb{position:fixed;inset:0;z-index:300;background:rgba(20,35,50,.92);display:none;overflow:auto}
+.lb.show{display:block}
+.lb img{width:100%;display:block}
+.lb .lb-close{position:fixed;right:14px;top:14px;width:40px;height:40px;border-radius:50%;border:none;
+  background:rgba(255,255,255,.9);font-size:20px;line-height:1;color:#27333d;font-family:inherit}
+
+/* 文档预览器（页面内全屏，不依赖新开窗口） */
+.vw{position:fixed;inset:0;z-index:400;background:rgba(20,35,50,.55);backdrop-filter:blur(3px);
+  display:none;flex-direction:column}
+.vw.show{display:flex}
+.vw-bar{flex-shrink:0;background:#fff;border-bottom:1px solid var(--line);padding:10px 14px;
+  display:flex;align-items:center;gap:10px;box-shadow:0 2px 10px rgba(46,143,206,.08)}
+.vw-bar .t{flex:1;min-width:0;font-size:13px;font-weight:600;color:var(--text);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.vw-bar .b{border:1px solid var(--line);background:var(--accent-soft);color:var(--accent-deep);
+  border-radius:10px;padding:6px 12px;font-size:12px;font-weight:600;text-decoration:none;
+  font-family:inherit;cursor:pointer;white-space:nowrap}
+.vw-bar .b.pri{background:linear-gradient(135deg,var(--accent),var(--accent-deep));color:#fff;border-color:transparent}
+.vw-bar .x{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:#fff;
+  font-size:17px;color:var(--text-dim);cursor:pointer;font-family:inherit;flex-shrink:0}
+.vw-body{flex:1;min-height:0;background:#f2f7fc;padding:10px;display:flex}
+.vw-body iframe,.vw-body object{flex:1;width:100%;height:100%;border:0;border-radius:12px;background:#fff}
+.vw-body.pages{display:block;overflow:auto;padding:12px;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.vw-pg{width:100%;display:block;border-radius:10px;background:#fff;margin-bottom:10px;min-height:80px;
+  box-shadow:0 3px 12px rgba(46,143,206,.14);border:1px solid var(--line);min-height:120px}
+.vw-pg:last-child{margin-bottom:0}
+.vw-tip{flex-shrink:0;text-align:center;font-size:11.5px;color:var(--text-dim);padding:12px 0 4px}
+.vw-tip .sp{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px;vertical-align:-1px;
+  border:2px solid #cfe4f5;border-top-color:var(--accent);animation:vspin .8s linear infinite}
+@keyframes vspin{to{transform:rotate(360deg)}}
+.vw-pfail{border-radius:10px;background:#fff;border:1px dashed #c9d8e4;margin-bottom:10px;padding:22px 14px;
+  text-align:center;font-size:12.5px;color:var(--text-dim);line-height:1.8}
+.vw-fb{margin:auto;text-align:center;max-width:420px;padding:26px;background:#fff;border-radius:14px;
+  border:1px solid var(--line)}
+.vw-fb .h{font-size:14px;font-weight:700;color:var(--text);margin-bottom:8px}
+.vw-fb .d{font-size:12.5px;color:var(--text-dim);line-height:1.8;margin-bottom:14px}
+
+/* 视频 */
+.vbox{border-radius:10px;overflow:hidden;aspect-ratio:16/9;position:relative;
+  background:linear-gradient(140deg,#2b83c4,#4ea8e6);
+  display:flex;align-items:center;justify-content:center;cursor:pointer}
+.vbox .play{width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.96);display:flex;
+  align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(20,45,70,.25)}
+.vbox .play::after{content:"";border-left:18px solid var(--accent-deep);border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:4px}
+.vbox .cap{position:absolute;left:13px;bottom:13px;font-size:12px;color:#fff;font-weight:500;text-shadow:0 1px 5px rgba(40,90,140,.5)}
+.vbox video{width:100%;height:100%;object-fit:contain;background:#000}
+
+/* 回到顶部 */
+.totop{position:fixed;right:14px;bottom:22px;width:42px;height:42px;border-radius:12px;
+  border:1px solid var(--line);
+  font-family:inherit;font-size:18px;line-height:1;color:var(--accent-deep);
+  background:#fff;box-shadow:0 3px 10px rgba(20,45,70,.12);z-index:50;opacity:0;pointer-events:none;transition:opacity .25s}
+.totop.show{opacity:1;pointer-events:auto}
+
+/* 统计面板 */
+.statp{position:fixed;inset:0;z-index:200;background:var(--bg2);overflow:auto;display:none;padding:20px}
+.statp.show{display:block}
+.statp .inner{max-width:600px;margin:0 auto}
+.statp .card{animation:none}
+
+.note{font-size:11px;color:var(--text-dim);text-align:center;padding:6px 0 4px;line-height:1.7}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+<script src="assets/pages/manifest.js"></script>
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <div class="brand">
+      <div class="logo">🌞</div>
+      <div class="name">作品集</div>
+    </div>
+    <nav class="nav" id="nav">
+      <a class="on" data-go="sec-top"><span class="ico">🏠</span>总览</a>
+      <a data-go="sec-proj"><span class="ico">📁</span>项目</a>
+      <a data-go="sec-mth" class="nav-2l"><span class="ico">🧭</span>我总结的<br>方法论</a>
+      <a data-go="sec-growth"><span class="ico">🌱</span>成长</a>
+      <a data-go="sec-adv"><span class="ico">💎</span>优势</a>
+      <a data-go="sec-skill"><span class="ico">🛠️</span>技能</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <header class="topbar" id="sec-top">
+      <span class="tb-ico">🌞</span>
+      <span class="tb-t">孙习冉的作品集</span>
+      <span class="tb-sub">Portfolio · 运营</span>
+    </header>
+
+    <nav class="anchor">
+      <a href="#sec-intent">求职意向</a>
+      <a href="#sec-proj">五个项目</a>
+      <a href="#sec-mth">我总结的方法论</a>
+      <a href="#sec-growth">成长轨迹</a>
+      <a href="#sec-adv">我的优势</a>
+      <a href="#sec-skill">技能与工具</a>
+      <a href="#sec-cert">证书核验</a>
+    </nav>
+
+    <section class="card hero" id="sec-intent">
+      <div class="h-top">
+        <div class="ava">🌞</div>
+        <div class="who">
+          <div class="nm">孙习冉</div>
+          <div class="role">18 岁 · 求职方向：运营</div>
+        </div>
+      </div>
+
+      <div class="h-kv">
+        <div class="h-i"><span class="k">到岗节奏</span><span class="v">可立刻入职 · 一周到岗 5 天及以上</span></div>
+        <div class="h-i"><span class="k">实习周期</span><span class="v">6 个月及以上 · 长期稳定</span></div>
+        <div class="h-i wide"><span class="k">职业态度</span><span class="v">热爱运营 · 兴趣浓厚 · 愿意深耕</span></div>
+        <div class="h-i wide"><span class="k">软性素质</span><span class="v">抗压能力强 · 可接受加班 · 可立刻上手 · 可多线推进 · 数据敏感 · 逻辑清晰 · 善于团队沟通协作 · 善复盘总结 · 积极乐观 · 责任心强 · 执行力强</span></div>
+        <div class="h-i wide"><span class="k">邮箱</span><span class="v">
+          <button class="mailbtn" id="mailBtn" onclick="showMail()">点击显示邮箱</button>
+          <span class="mailval" id="mailVal">sun.xiran@foxmail.com</span>
+        </span></div>
+      </div>
+
+    </section>
+
+    <div id="sec-proj" style="scroll-margin-top:10px"></div>
+    <h2 style="font-size:17px;display:flex;align-items:center;gap:9px;padding:0 3px">
+      <span style="width:30px;height:30px;flex-shrink:0;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;background:linear-gradient(135deg,#e6f3fd,#e9f4fd);box-shadow:inset 0 0 0 1px #dcebf8">⭐</span>
+      五个项目
+    </h2>
+    <div id="projList" style="display:flex;flex-direction:column;gap:15px;margin-top:12px"></div>
+
+    <section class="card">
+      <h2><span class="hico">📊</span>成果速览</h2>
+      <div class="stat-row">
+        <div class="stat"><div class="sico">📁</div><div class="num">5</div><div class="cap">个项目</div></div>
+        <div class="stat"><div class="sico">👥</div><div class="num">2,667</div><div class="cap">社群覆盖</div></div>
+        <div class="stat"><div class="sico">📝</div><div class="num">2万+</div><div class="cap">研究输出</div></div>
+      </div>
+    </section>
+
+    <section class="card" id="sec-mth">
+      <h2><span class="hico">🧭</span>我总结的方法论</h2>
+      <p class="hint" style="margin-top:-6px;margin-bottom:12px">从 6 张复盘导图里提炼的共性范式——项目会变，这套思考方式不变。</p>
+
+      <div class="mth">
+        <div class="mth-t">复盘七步 · 我的统一思考范式</div>
+        <div class="mth-d">6 个项目我用同一套结构复盘，这是我能把经验迁移到陌生赛道的原因。</div>
+        <div class="flow">
+          <span>底层思维</span><i>→</i><span>可复用方法论</span><i>→</i><span>深度复盘</span><i>→</i>
+          <span>认知升级</span><i>→</i><span>行业底层</span><i>→</i><span>标准化 SOP</span><i>→</i><span>持续沉淀</span>
+        </div>
+      </div>
+
+      <div class="mth">
+        <div class="mth-t">赛道三段式：触点 — 承接 — 交易</div>
+        <div class="mth-d">做任何一个垂直赛道，先分清楚三件事各由谁承担：公域负责触达与增长，私域负责答疑与关系资产沉淀，交易板块负责服务与流转。阵地不分清楚，矩阵内部就会流量内耗。</div>
+        <div class="flow"><span>公域内容触达</span><i>→</i><span>私域分层承接</span><i>→</i><span>交易与服务</span></div>
+      </div>
+
+      <div class="mth">
+        <div class="mth-t">低摩擦承接：内容资产 → 用户资产</div>
+        <div class="mth-d">内容不仅要有触达量，账号侧必须配置承接入口。用刚需内容建立信任，再把信任一键转成私域用户，流量才不会漏。</div>
+        <div class="flow"><span>刚需内容</span><i>→</i><span>建立信任</span><i>→</i><span>一键入群</span><i>→</i><span>分层沉淀</span></div>
+      </div>
+
+      <div class="mth">
+        <div class="mth-t">渠道效率测算：不平均用力</div>
+        <div class="mth-d">预算永远不够，所以要横向测算 ROI / CAC / 转化率，找出值得加码的那几个，并识别「高转化但贵」的渠道该换目标而不是砍掉。</div>
+        <div class="flow"><span>人群画像</span><i>→</i><span>渠道匹配</span><i>→</i><span>ROI/CAC 测算</span><i>→</i><span>预算重分配</span></div>
+      </div>
+
+      <div class="mth">
+        <div class="mth-t">风控前置：识别 — 揭发 — 预警 — 处置</div>
+        <div class="mth-d">只审核不揭发、只发布不预警，等于放任风险。把风控从事后删帖前移到事前提醒，信任是省出来的。</div>
+        <div class="flow"><span>线索收集</span><i>→</i><span>多渠道联动揭发</span><i>→</i><span>风险预警</span><i>→</i><span>标准化处置</span></div>
+      </div>
+
+      <div class="mth">
+        <div class="mth-t">需求驱动而非运营驱动</div>
+        <div class="mth-d">服务方向不能凭主观判断。持续从公域咨询、私域反馈、审核巡查中收集高频问题与信息盲区，结构化归类后反向优化内容、服务口径与板块规则。</div>
+        <div class="flow"><span>需求收集</span><i>→</i><span>归类分析</span><i>→</i><span>策略调整</span><i>→</i><span>效果反馈</span></div>
+      </div>
+
+      <div class="fcap" style="margin-top:16px">🖼️ 6 张复盘导图 · 点开可放大</div>
+      <div class="mgrid">
+        <figure onclick="openImg('assets/img/03-校园私域-复盘导图.png')">
+          <img src="assets/img/t/03-校园私域-复盘导图.jpg" loading="lazy" alt="校园私域生态运营"><figcaption>校园私域生态运营</figcaption></figure>
+        <figure onclick="openImg('assets/img/01-全渠道营销-复盘导图.png')">
+          <img src="assets/img/t/01-全渠道营销-复盘导图.jpg" loading="lazy" alt="FORAGE 全渠道营销"><figcaption>FORAGE 全渠道营销</figcaption></figure>
+        <figure onclick="openImg('assets/img/04-猫咪赛道-复盘导图.png')">
+          <img src="assets/img/t/04-猫咪赛道-复盘导图.jpg" loading="lazy" alt="抖音猫咪赛道商业化"><figcaption>抖音猫咪赛道商业化</figcaption></figure>
+        <figure onclick="openImg('assets/img/02-沃尔玛副商人-复盘导图.png')">
+          <img src="assets/img/t/02-沃尔玛副商人-复盘导图.jpg" loading="lazy" alt="沃尔玛副商人"><figcaption>沃尔玛副商人</figcaption></figure>
+        <figure onclick="openImg('assets/img/05-平台端-复盘导图.png')">
+          <img src="assets/img/t/05-平台端-复盘导图.jpg" loading="lazy" alt="平台端行业分析"><figcaption>平台端行业分析</figcaption></figure>
+        <figure onclick="openImg('assets/img/06-品牌端-复盘导图.png')">
+          <img src="assets/img/t/06-品牌端-复盘导图.jpg" loading="lazy" alt="品牌端行业分析"><figcaption>品牌端行业分析</figcaption></figure>
+      </div>
+      <p class="hint">每张导图都按同一套七步范式复盘，对应上面各自的项目。</p>
+    </section>
+
+    <section class="card" id="sec-growth">
+      <h2><span class="hico">🌱</span>成长轨迹</h2>
+      <div class="tl">
+        <div class="tl-item"><div class="tl-date">2020</div>
+          <div class="tl-t">对运营产生浓厚兴趣，开始自主学习</div>
+          <div class="tl-d">自发研究电商与内容运营案例，零碎接触校园项目，建立「流量—转化—留存」的基础认知。</div></div>
+        <div class="tl-item"><div class="tl-date">2026.06</div>
+          <div class="tl-t">启动行业与赛道研究</div>
+          <div class="tl-d">从零开始写行业分析报告，练的是「把散点信息整理成别人能直接用的判断」。</div></div>
+        <div class="tl-item"><div class="tl-date">2026.08</div>
+          <div class="tl-t">校园私域生态运营启动</div>
+          <div class="tl-d">作为 5 人团队核心成员，搭起「公域触达 → 私域沉淀 → 交易服务」全链路，第一次对真实增长结果负责。</div></div>
+        <div class="tl-item"><div class="tl-date">2026.09–10.10</div>
+          <div class="tl-t"><span class="tl-en">FORAGE · Omnichannel Marketing</span><span class="tl-cn">全渠道营销</span></div>
+          <div class="tl-d">独立完成 4 项任务、6 份交付物，跑通人群—渠道—排期—复盘的完整链路，测验 90%。</div></div>
+        <div class="tl-item"><div class="tl-date">2026.10</div>
+          <div class="tl-t">品牌端行业分析 + 抖音猫咪赛道商业化</div>
+          <div class="tl-d">从「看行业」推进到「能给出可执行建议」，一手样本挖掘成为研究方法上的转折点。</div></div>
+        <div class="tl-item"><div class="tl-date">2026.10.20</div>
+          <div class="tl-t"><span class="tl-en">FORAGE · Associate Merchant (Walmart)</span><span class="tl-cn">沃尔玛副商人</span></div>
+          <div class="tl-d">测验满分 100%，完成零售选品、定价判断与向上建议。</div></div>
+        <div class="tl-item"><div class="tl-date">2026.11</div>
+          <div class="tl-t">三份报告收官</div>
+          <div class="tl-d">平台端、品牌端行业分析与猫咪赛道商业化分析定稿，合计约 2 万字。</div></div>
+      </div>
+    </section>
+
+    <section class="card" id="sec-adv">
+      <h2><span class="hico">💎</span>我的优势</h2>
+      <div class="adv">
+        <div class="adv-h"><span class="adv-k">精通 · 品类与商品运营</span><span class="adv-e2">Assortment</span><span class="adv-bar"></span></div>
+        <div class="adv-e">能从销售数据里挑出该加码的商品并落到定价与货架动作上：沃尔玛 Associate Merchant 用三问框架验证后建议加码 Trail Mix —— 校园店 <b>+64%</b>、城市店 <b>+50%</b>，定价 <b>$4.19</b> 比全国品牌 $5.49 低约 <b>24%</b>；为滞销品出 <b>3 套</b>恢复方案并标明各自代价 · 测验 <b>100%</b></div>
+      </div>
+
+      <div class="adv">
+        <div class="adv-h"><span class="adv-k">擅长 · 流量转化与大促推进</span><span class="adv-e2">Traffic &amp; Campaign</span><span class="adv-bar"></span></div>
+        <div class="adv-e">能把「钱该投哪个渠道」算清楚、也能独立推完一场活动：8 渠道 × 3 指标横向测算排序锁定 TikTok 为最优渠道，<b>ROI 233%</b>、<b>CAC $8.82</b>（全渠道均值 $15.70 的 56%）建议加码；线下 CAC 最贵 <b>$19.74</b> 建议转做体验 · 7 类人群 × 12 渠道 × 6 类物料 × 5 周排期全程独立完成</div>
+      </div>
+
+      <div class="adv">
+        <div class="adv-h"><span class="adv-k">熟稔 · 赛道研判与市场测算</span><span class="adv-e2">Market Sizing</span><span class="adv-bar"></span></div>
+        <div class="adv-e">陌生赛道能在两周内拆到「能不能进、怎么定价」这一层：抖音平价猫咪赛道商业化分析 · <b>7,682 字</b> · <b>200+ 条</b>一手评价 + <b>30+ 起</b>投诉样本 · <b>14 个</b>信源 → 收敛出 3 条落地路径与主推 <b>29.9 元</b> / 引流 <b>15.9 元</b>价格组合</div>
+      </div>
+
+      <div class="adv">
+        <div class="adv-h"><span class="adv-k">深谙 · 产业链与竞争格局拆解</span><span class="adv-e2">Industry Chain</span><span class="adv-bar"></span></div>
+        <div class="adv-e">能看清一个行业谁在赚钱、钱往哪流，并把结论做成可复用框架：平台端 × 品牌端 <b>2 份</b>行业报告合计 <b>1.24 万字</b> · <b>5 维</b>对照表 · 得出「平台看机制、品牌看利润，两套经验可互译」</div>
+      </div>
+
+      <div class="adv">
+        <div class="adv-h"><span class="adv-k">精于 · 商业化路径设计</span><span class="adv-e2">Monetization</span><span class="adv-bar"></span></div>
+        <div class="adv-e">不停在「写一份报告」，而是把研究结论推到可执行的商业路径：猫咪赛道从痛点直接推到 <b>3 条</b>商业化路径 + 主推 <b>29.9 / 引流 15.9</b> 价格组合 + 内容与渠道分工，并写明结论前提与失效边界</div>
+      </div>
+
+      <div class="adv">
+        <div class="adv-h"><span class="adv-k">长于 · 商务沟通与结构化交付</span><span class="adv-e2">Biz Writing</span><span class="adv-bar"></span></div>
+        <div class="adv-e">向上汇报给的是建议不是数据表，交付物可直接用于汇报与执行：<b>3 份</b>研究报告约 <b>2 万字</b> · <b>12 / 13 页</b>作品集 deck 各一份 · 8 渠道数据分析表 · 英文商务邮件向上建议加码 · <b>4:38</b> 提案讲解视频 · 测验 <b>100%</b></div>
+      </div>
+
+      <div class="adv">
+        <div class="adv-h"><span class="adv-k">善用 · 用户洞察与机制设计</span><span class="adv-e2">User Insight</span><span class="adv-bar"></span></div>
+        <div class="adv-e">能把社群从通知渠道做成可沉淀的用户资产、用规则代替人肉维护：<b>2,667 人</b>分层社群矩阵（新生 869 / 新生二群 500 / 答疑 485 / 研究生 447 / 口碑榜 366）· 高频问题知识库与统一答复口径等组成标准服务 SOP · 需求反哺口碑榜单与避坑指引持续迭代 · 公域 <b>3,400+</b> 获赞、<b>70+</b> 作品</div>
+      </div>
+
+      <div class="adv">
+        <div class="adv-h"><span class="adv-k">洞悉 · 平台规则与风控治理</span><span class="adv-e2">Risk Control</span><span class="adv-bar"></span></div>
+        <div class="adv-e">把风控从事后删帖前移到事前预警、用标准流程替代经验判断：三级机制（先审后发 + 分层处置 + 风险预警）· 破解 4 类难题（冷启动 / 内容审核 / 交易治理 / 欺诈识别）· 联动揭发兼职刷单、虚假交易、代拿代办、冒充身份等骗局并公示</div>
+      </div>
+
+      <div class="adv">
+        <div class="adv-h"><span class="adv-k">长于 · 沟通表达与团队协作</span><span class="adv-e2">Teamwork</span><span class="adv-bar"></span></div>
+        <div class="adv-e">能在多方之间把话说清楚、把事推下去：5 人团队<b>核心成员</b>，与队友分工推进 4 个执行环节 · 跨 <b>4 个平台</b>（抖音 / 小红书 / 微信 / QQ）联动、统一口径揭发多类骗局 · 面向客户提案（<b>4:38</b> 讲解视频）· 用英文商务邮件向上汇报建议</div>
+      </div>
+
+      <div class="adv">
+        <div class="adv-h"><span class="adv-k">能扛 · 抗压与高强度交付</span><span class="adv-e2">Resilience</span><span class="adv-bar"></span></div>
+        <div class="adv-e">多线程并行推进也不掉链子、适应快节奏与加班大促强度：<b>5 个月内并行推进 5 个项目</b>（含 3 份行业研究），累计独立产出约 <b>2 万字</b>研究与 <b>15 份</b>交付物 · 两项高难度岗位模拟测验 <b>90% / 100%</b></div>
+      </div>
+
+      <div class="adv">
+        <div class="adv-h"><span class="adv-k">过硬 · 责任心与执行力</span><span class="adv-e2">Execution</span><span class="adv-bar"></span></div>
+        <div class="adv-e">接到的活有始有终、交付前自己先把关：校园项目自 <b>2026.08 持续运营至今</b>、<b>2,667 人</b>矩阵长期维护不断档 · <b>200+ 条</b>一手评价逐条人工归类、<b>30+ 起</b>投诉逐个定位 · 恢复方案均标明代价与适用边界，不交没验证过的结论</div>
+      </div>
+
+      <div class="adv">
+        <div class="adv-h"><span class="adv-k">善做 · 复盘总结与 SOP 沉淀</span><span class="adv-e2">Retrospective</span><span class="adv-bar"></span></div>
+        <div class="adv-e">习惯把一次性动作沉淀成可复用流程：8 渠道复盘 → 输出<b>预算重分配建议</b>（加码 TikTok、线下转体验）· 校园项目沉淀<b>标准服务 SOP + 三级风控</b>机制 · 3 份研究报告全部写明<b>结论前提与失效边界</b> · 留下 6 张复盘导图（见「我总结的方法论」）</div>
+      </div>
+    </section>    <section class="card" id="sec-skill">
+      <h2><span class="hico">🛠️</span>技能与工具</h2>
+
+      <div class="sk-grp">
+        <div class="sk-h"><span class="t">精通</span>
+          <span class="src src-real" style="font-size:10px;padding:2px 9px">★ 核心能力</span></div>
+        <div class="sk2-list">
+          <div class="sk2 core"><b>选品与定价决策</b><span>基于销售数据横向对比识别值得加码的商品，用「卖得好吗 / 为什么 / 加多少」三问框架做结论压力测试，再扫描竞品价格带定锚点、用毛利与周转双约束反推价格档；曾为沃尔玛 Trail Mix 给出加码建议，带来校园店 <b>+64%</b>、城市店 <b>+50%</b> 增长，定价 $4.19 较全国品牌低约 <b>24%</b>，并落到货架陈列与补货动作。</span></div>
+          <div class="sk2 core"><b>赛道研究与市场测算</b><span>陌生赛道按「规模 → 价格带 → 竞品 → 用户声音」四层逐层下钻，两周内收敛切入方向与定价锚点；用 TAM / SAM / SOM 三级框算与增速、集中度双指标判断窗口期，调用 <b>14 个</b>信源与 <b>200+ 条</b>一手评价交叉验证，输出可执行的进入判断。</span></div>
+          <div class="sk2 core"><b>渠道策略与 ROI · CAC 测算</b><span>建立统一 ROI / CAC / 转化率口径横向拉齐 8 个渠道，按边际效益排序锁定加码与收缩对象，把测算结论翻译成预算重分配动作；TikTok <b>ROI 233%</b>、<b>CAC $8.82</b>（全渠道均值 $15.70 的 56%）据此建议加码，线下高转化低效率识别为「体验」而非「转化」。</span></div>
+          <div class="sk2 core"><b>商业化路径设计</b><span>把研究结论推到可执行的商业路径：设计定价组合（主推 / 引流）、产品结构（引流款 / 利润款 / 形象款）、内容与渠道分工，并写明结论成立的前提与失效边界；猫咪赛道收敛出 <b>3 条</b>商业化路径与主推 <b>29.9 / 引流 15.9</b> 价格带。</span></div>
+          <div class="sk2 core"><b>用户分层与 SOP 机制设计</b><span>按需求场景与身份分层承接，用机制替代人肉维护：搭建 <b>2,667 人</b>分层社群矩阵，沉淀标准服务 SOP 与「先审后发 + 分层处置 + 事前预警」三级风控，把一线经验固化为可复用流程。</span></div>
+        </div>
+      </div>
+
+      <div class="sk-grp">
+        <div class="sk-h"><span class="t">精通</span><span class="n">运营硬技能 · 16 项</span></div>
+        <div class="sk2-list">
+          <div class="sk2"><b>数据清洗与建模</b><span>擅长多源数据去重、标准化与异常值处理，用 Power Query 与复杂嵌套函数搭建可复用的清洗流水线，建动态数据透视与参数化看板实现业务数据可视化追踪，把分散表格汇成一眼看懂的业务视图，处理万级数据并支撑周期性复盘。</span></div>
+          <div class="sk2"><b>转化漏斗拆解</b><span>全链路漏斗（曝光 → 点击 → 咨询 → 下单 → 复购）逐层拆解，定位转化漏点与流失环节，结合渠道归因判断预算该花在哪一步最有效，用 A/B 与漏斗对照输出可落地的优化动作而非仅给图表。</span></div>
+          <div class="sk2"><b>客单价与连带率分析</b><span>客单、件单与连带率多维拆解，识别高连带品类组合与凑单机会，配套满减、搭售与组合定价策略，用价格带与货架动线配合提升连带，把「客单低」拆成可执行的品类动作。</span></div>
+          <div class="sk2"><b>商品卖点与转化文案</b><span>从用户痛点反推卖点，用 FAB 结构撰写高转化详情页与投放文案，先解决顾虑再讲卖点，用评论高频词校准文案钩子并以 A/B 测试持续迭代，让文案直接对转化负责。</span></div>
+          <div class="sk2"><b>竞品与赛道拆解</b><span>竞品价格带、卖点、渠道与评价四维拆解，识别进入机会与差异化空间，输出竞争地图与打法建议，并用一手用户声音验证差异化是否成立，避免自嗨式定位。</span></div>
+          <div class="sk2"><b>市场规模测算</b><span>用 TAM / SAM / SOM 三级框算与自上而下、自下而上双向校验，结合增速与集中度判断窗口期，把「市场大不大」落到可决策的数字，支撑赛道进入与资源分配判断。</span></div>
+          <div class="sk2"><b>定价与毛利测算</b><span>从成本结构、平台扣点与物流反推底价，扫描竞品价格带定锚点，用毛利与周转双约束定档，平衡走量与服务商利润，输出既打得赢又能赚钱的价格方案。</span></div>
+          <div class="sk2"><b>商品结构规划</b><span>按引流款、利润款、形象款做货架与价格带组合设计，用动销与毛利双轴排结构，结合生命周期与季节性调整，并以齐架率、缺货率校准，让货架始终为转化服务。</span></div>
+          <div class="sk2"><b>活动策划与大促节奏</b><span>从目标拆解到排期推进再到复盘，独立推完 <b>7 类人群 × 12 渠道 × 6 类物料 × 5 周</b>排期，把控预热、爆发与返场节奏，配套资源分配与风险预案，用数据复盘驱动下一轮迭代。</span></div>
+          <div class="sk2"><b>一手用户洞察（VOC）</b><span>挖掘 <b>200+ 条</b>真实评价与 <b>30+ 起</b>投诉逐条编码归类，用质化分析提炼痛点与机会，把「用户原话」翻译成可指导产品与运营的量化结论。</span></div>
+          <div class="sk2"><b>用户旅程设计</b><span>搭建公域触达 → 私域承接 → 交易转化全链路，用「触点—承接—交易」三段式做阵地分工，降低从看到到下单的摩擦，以漏斗与流失点持续校准每一步体验。</span></div>
+          <div class="sk2"><b>需求收集与优先级</b><span>从公域咨询、私域反馈与审核巡查中结构化收集需求，用影响面 × 紧急度 × 成本三维排序（RICE / 价值—成本矩阵）定优先级，驱动内容与服务持续迭代。</span></div>
+          <div class="sk2"><b>行业研究报告撰写</b><span>结构化交付可直接用于汇报：结论先行、证据后置、写明前提与边界，目录、图表与五维对照表标准化，二手数据经交叉验证后引用，让报告经得起追问。</span></div>
+          <div class="sk2"><b>数据看板与周报</b><span>把分散数据汇成可一眼看懂的业务视图，用自动化刷新减少手工、以异常预警提示波动，配套叙事化周报降低阅读门槛，支撑周期性复盘与管理决策。</span></div>
+          <div class="sk2"><b>商务沟通与提案</b><span>向上给可采纳建议而非数据堆砌，用金字塔结构表达（结论—论据—动作），会前对齐目标、会后跟进行动；面向客户做过 <b>4:38</b> 提案讲解视频，把方案讲成客户愿意买单的故事。</span></div>
+          <div class="sk2"><b>英文商务写作</b><span>英文邮件与提案表达专业清晰，用 data-backed 句式向上汇报加码建议并获采纳；中英双语文档无歧义，FORAGE 测验满分 <b>100%</b>，能直接在跨国团队里用英文推进工作。</span></div>
+        </div>
+      </div>
+
+      <div class="sk-grp">
+        <div class="sk-h"><span class="t" style="color:#5a7d94">熟练</span>
+          <span class="n">办公与效率工具 · 10 项</span></div>
+        <div class="sk2-list">
+          <div class="sk2"><b>Excel / WPS 表格</b><span>熟练用 Power Query 做多表合并与 ETL 清洗，INDEX / MATCH / SUMIFS 等复杂嵌套函数与动态数组（spill）建模，透视表 + 切片器搭交互看板，条件格式与图表做仪表盘，宏录制半自动化重复动作，处理万级数据并沉淀可复用的测算模板。</span></div>
+          <div class="sk2"><b>Word / WPS 文字</b><span>长文档用样式与多级标题体系管理结构，自动目录、题注与交叉引用保证跳转准确，页眉页脚与分节编排统一版式，表格图文混排，多份报告套同一模板保持视觉一致，成品可直接用于汇报与交付。</span></div>
+          <div class="sk2"><b>PowerPoint / WPS 演示</b><span>用金字塔逻辑搭 deck 结构，母版与版式统一视觉语言，把控图文配比与信息层级，数据图表可视化呈现，<b>12–13 页</b>作品集级呈现，配套演讲备注与转场设计，让汇报既专业又有记忆点。</span></div>
+          <div class="sk2"><b>剪映 视频剪辑</b><span>口播脚本分镜与节奏剪辑，字幕、花字与转场包装，画外音与 BGM 配比，关键数据用动效高亮，独立完成 <b>4:38</b> 客户提案讲解视频的剪辑与包装，把方案讲成看得懂的故事。</span></div>
+          <div class="sk2"><b>思维导图 XMind / 幕布</b><span>用中心辐射结构拆解复杂问题，把复盘七步、赛道三段式等范式落成导图，将报告逻辑骨架可视化，沉淀 <b>6 张</b>可复用的分析导图，作为思考与汇报的共用语言。</span></div>
+          <div class="sk2"><b>腾讯文档 / 飞书</b><span>多人实时协同编辑与权限分级，评论与 @ 跟进任务，模板库与知识库搭建，版本历史与变更可追溯，支撑团队实时共创与资料沉淀。</span></div>
+          <div class="sk2"><b>企业微信 / 钉钉</b><span>社群分层入群与自动欢迎，标签与 SOP 快捷回复统一答复口径，内部审批与待办协同，用机器人降低重复操作，让社群运营与跨部门协作都跑在标准化流程上。</span></div>
+          <div class="sk2"><b>问卷星 / 金数据</b><span>问卷逻辑跳题与配额控制，多渠道投放与回收，数据看板与交叉分析，NPS / 满意度追踪，支撑一手样本收集与效果度量。</span></div>
+          <div class="sk2"><b>Canva / 稿定设计</b><span>套用品牌色与字体规范，海报、封面、九宫格与信息图模板化产出，批量出图与多尺寸自适应，用组件库保证多平台物料视觉统一。</span></div>
+          <div class="sk2"><b>Photoshop 基础</b><span>图层、蒙版与抠图精修，尺寸与导出格式适配多端，批处理与动作增效，满足日常运营配图与活动物料导出需求。</span></div>
+        </div>
+      </div>
+
+    </section>    <section class="card" id="sec-cert">
+      <h2><span class="hico">🏅</span>证书与核验</h2>
+      <div class="cert">
+        <span class="ci">🏅</span>
+        <div class="cn"><div class="n">FORAGE · Omnichannel Marketing</div>
+          <div class="c">核验码 6abb1a09 · 测验 90%</div></div>
+        <button onclick="openDoc('assets/docs/01-Forage全渠道-证书.pdf','证书')">查看</button>
+      </div>
+      <div class="cert">
+        <span class="ci">🏅</span>
+        <div class="cn"><div class="n">FORAGE · Associate Merchant (Walmart)</div>
+          <div class="c">核验码 6aca16ff · 测验 100%</div></div>
+        <button onclick="openDoc('assets/docs/02-Forage沃尔玛-证书.pdf','证书')">查看</button>
+      </div>
+      <p class="hint">两张证书均可在 FORAGE 官网凭核验码查询。</p>
+    </section>
+
+    <div class="note">
+      孙习冉 · 运营 · 上海 · 可立刻入职 · 一周到岗 5 天及以上 · 可实习 6 个月以上<br>
+      <span id="footMail"></span>
+    </div>
+  </main>
+</div>
+
+<button class="totop" id="toTop" aria-label="回到顶部">↑</button>
+
+<div class="panel" id="panel">
+  <div class="p-head">
+    <button class="p-back" id="pBack">←</button>
+    <div class="p-crumb"><div class="c1" id="c1"></div><div class="c2" id="c2"></div></div>
+  </div>
+  <div class="p-body" id="pBody"></div>
+</div>
+
+<div class="lb" id="lb"><button class="lb-close" onclick="closeLB()">✕</button><img id="lbImg" alt="复盘导图"></div>
+
+<div class="vw" id="vw">
+  <div class="vw-bar">
+    <button class="x" onclick="closeVW()">✕</button>
+    <div class="t" id="vwT">文档预览</div>
+    <a class="b" id="vwDown" download>下载</a>
+    <a class="b" id="vwTab" target="_blank" rel="noopener">新标签页打开</a>
+  </div>
+  <div class="vw-body" id="vwBody"></div>
+</div>
+
+<div class="statp" id="statp">
+  <div class="inner">
+    <div class="card">
+      <h2><span class="hico">📈</span>访问统计 · 仅你可见</h2>
+      <div class="stat-row" style="margin-bottom:12px">
+        <div class="stat"><div class="sico">👀</div><div class="num" id="stPv">–</div><div class="cap">总访问</div></div>
+        <div class="stat"><div class="sico">🧭</div><div class="num" id="stUv">–</div><div class="cap">独立访客</div></div>
+      </div>
+      <div id="stCh" class="hint"></div>
+      <p class="hint">按域名统计，换域名后计数重新开始。想区分「哪家公司看过」，需要接入专业统计平台。</p>
+      <button class="mailbtn" style="margin-top:10px" onclick="closeStat()">关闭</button>
+    </div>
+  </div>
+</div>
+
+<script>
+var A='assets/', D=A+'docs/', I=A+'img/', V=A+'video/';
+/* 八大渠道原始数据（与原 Excel 逐行一致，8 渠道 × 6 项原始指标）——必须定义在渲染之前 */
+var CH_ROWS=[
+  ['Instagram Ads',5200,18000,1400,320,9600],
+  ['YouTube Sponsorships',6800,25000,2100,390,12300],
+  ['TikTok Campaign',4500,30000,2800,510,15000],
+  ['In-Person Events',7500,3200,1150,380,11200],
+  ['Email Newsletter',2000,12000,750,180,5400],
+  ['Facebook Ads',3900,14500,900,220,6800],
+  ['Influencer Collab',5700,9800,1300,360,10700],
+  ['Blog Partnerships',2800,7500,640,150,3900]
+];
+
+var P=[
+{
+ id:'omni', src:'sim', srcTxt:'岗位模拟',
+ four:'全域提效', name:'Omnichannel Marketing (FORAGE)', nameCn:'全渠道整合营销 · FORAGE 平台岗位模拟',
+ sub:'为虚拟穿搭 APP 设计整合营销方案，跑通 8 渠道 ROI/CAC 测算并给出预算重分配建议',
+ time:'2026.09 – 2026.10.10',
+ meta:'独立完成 · 4 项任务 · 6 份交付物',
+ cal:'FORAGE 官方岗位模拟 · 数据集为教学用虚构数据 · 证书核验码 6abb1a09',
+ metrics:[{n:'233%',c:'TikTok ROI（测算）',note:'基于项目给定数据集测算'},{n:'$8.82',c:'最优渠道 CAC（测算）',note:'基于项目给定数据集测算'},{n:'90%',c:'测验得分'}],
+ star:[
+  ['痛点','预算有限，<b>12 个渠道该投谁不知道</b>；超本地大使也靠感觉选，没有统一标准。'],
+  ['任务','为虚拟穿搭 APP 设计整合营销方案，执行后完成渠道效率复盘并给出预算重分配建议。'],
+  ['行动','拆 <b>7 类人群画像</b> → 匹配 <b>12 个渠道</b>策略 → 排 <b>6 类物料 × 5 周</b>发布节奏 → 建 <b>5 维评估框架</b>筛选超本地大使 → 跑完 8 渠道 ROI / CAC 测算 → 输出预算建议。'],
+  ['效果','<b>ROI 233% · CAC $8.82</b> —— 8 个渠道用同一套 ROI / CAC / 转化率口径横向算完，锁定 <b>TikTok 为最优渠道</b>（CAC 仅为全渠道均值 $15.70 的 56%）建议加码；线下 <b>转化率最高 33.04% 但 CAC 最贵 $19.74</b>，据此建议改做「体验」而非「转化」，把预算从最贵的挪到最省的。']
+ ],
+ duty:[
+  ['我负责','4 项任务<b>全程独立完成</b>，从策略设计到复盘建议一把拎到底'],
+  ['我做了','拆 <b>7 类人群画像</b> → 匹配 <b>12 个渠道</b>策略 → 排 <b>6 类物料 × 5 周</b>节奏 → 建 <b>5 维评估框架</b>筛出 2 位超本地大使 → 跑 <b>8 渠道</b> ROI / CAC 横向测算'],
+  ['我产出','<b>6 份交付物</b>：整合营销计划 · 数字产品概念方案 · 大使推荐 PPT · <b>4:38</b> 提案视频 · 渠道复盘表与预算重分配建议 · 测验 <b>90%</b>']
+ ],
+ tags:['人群画像','渠道策略','活动排期','ROI/CAC 测算','数据复盘','英文商务写作'],
+ secs:[{t:'口径说明',h:'📎',p:'本项目为 <b>FORAGE 平台官方发布的 Omnichannel Marketing 岗位模拟</b>，<b>数据集为教学用虚构数据</b>；任务场景、评分标准与证书真实，交付物（12 页作品集 PPT、数据分析表、商务邮件与口播视频）均为本人独立完成。数字位标注「测算」的，均为基于给定数据集的分析结论，非实际业务业绩。'}],
+ subs:[
+  {t:'Task 1 · Integrated Marketing Plan',h:'📋',d:'拆解 7 类人群画像，匹配 12 个渠道策略，排布 6 类物料 × 5 周发布节奏，形成完整整合营销计划。',n:'交付：Creative Brief + 渠道简报'},
+  {t:'Task 2 · Digital Product Concept',h:'📱',d:'设计虚拟穿搭功能 APP：6 步用户旅程、7 大功能模块，并列出 8 项落地挑战与应对。',n:'交付：数字产品概念方案'},
+  {t:'Task 3 · Hyper-local Ambassador Strategy',h:'🎤',d:'为品牌选出真正扎进本地社区的人：先搭 5 维评估框架（本地影响力 · 人群契合度 · 内容产出力 · 合作意愿 · 成本），据此筛选出 2 位大使并出具完整档案，再按两人各自的城市与圈层给出差异化的超本地化落地打法；最后录制 4:38 讲解视频向客户提案。',n:'交付：超本地化大使推荐 PPT + 口播视频'},
+  {t:'Task 4 · Channel Data Review',h:'📊',d:'汇总 8 大渠道数据做 ROI / CAC / 转化率横向测算与排名，输出预算重分配建议：加码 TikTok，线下转型做体验。',n:'交付：八渠道数据分析表 + 复盘'}
+ ],
+ files:[
+  {k:'PPT',i:'📊',n:'Omnichannel Marketing 作品集（12 页）',s:'PPT 原稿 · 已转 PDF，点开即读',p:D+'01a-FORAGE全渠道营销作品集.pdf'},
+  {k:'表格',i:'📈',n:'大使营销活动八大渠道数据分析表',s:'8 渠道 × 9 项指标 · 含平均/最低/最高，下方已完整展开',p:D+'01g-八大渠道数据分析表.pdf',tbl:1},
+  {k:'PPT',i:'🎤',n:'超本地化战略大使推荐',s:'5 维评估框架 · 2 位大使档案 · 点开即读',p:D+'01f-超本地化大使推荐.pdf'},
+  {k:'Word',i:'📑',n:'八大营销渠道简报',s:'Word 原稿 · 已转 PDF，点开即读',p:D+'01d-八大营销渠道简报.pdf'},
+  {k:'Word',i:'📝',n:'营销创意简报（挂壁智能全身镜）',s:'Word 原稿 · 已转 PDF，点开即读',p:D+'01e-营销创意简报.pdf'},
+  {k:'Word',i:'📱',n:'数字产品概念方案（虚拟穿搭 APP）',s:'Word 原稿 · 已转 PDF，点开即读',p:D+'01c-数字产品概念方案.pdf'},
+  {k:'视频',i:'🎬',n:'本地大使推荐口播视频（4:38）',s:'点开才加载 · 不拖慢首屏',video:true},
+  {k:'证书',i:'🏅',n:'FORAGE 荣誉证书（核验码 6abb1a09）',s:'PDF · 可在 FORAGE 官网核验',p:D+'01-Forage全渠道-证书.pdf'}
+ ]
+},
+{
+ id:'wm', src:'sim', srcTxt:'岗位模拟',
+ four:'选品定策', name:'Associate Merchant (Walmart)', nameCn:'沃尔玛选品定价 · FORAGE 平台岗位模拟',
+ sub:'在沃尔玛货架场景做选品、定价与滞销品恢复判断，向上输出加码建议',
+ time:'2026.09 – 2026.10.20',
+ meta:'独立完成 · 2 项任务 · 测验满分',
+ cal:'Walmart 官方发布岗位模拟 · 数据集为教学用虚构数据 · 证书核验码 6aca16ff',
+ metrics:[{n:'100%',c:'测验得分'},{n:'+64%',c:'Trail Mix 校园店（测算）',note:'基于项目给定数据集测算'},{n:'3 套',c:'滞销品恢复方案（我设计）'}],
+ star:[
+  ['痛点','货架上两款零食表现分化，<b>该加码谁、滞销品还值不值得救</b>，缺一个站得住的判断依据。'],
+  ['任务','判断该加码谁、滞销品值不值得救，并向上给出可执行建议。'],
+  ['行动','用销售数据识别赢家 → <b>三问框架</b>验证结论是否站得住 → 撰写英文商务邮件向上建议 → 为滞销品设计 <b>3 套恢复方案</b>并做取舍权衡。'],
+  ['效果','<b>校园店 +64% · 城市店 +50% · $4.19 vs $5.49</b> —— 确认 Trail Mix 两个店型都在涨、且定价比全国品牌便宜约 24%，建议加码；Power Squares 流量最高 1,150 却转化最低 3.2% 的根因被定位为「定价偏高 + 评分 3.1」，配套给出 3 套恢复方案与各自代价 · 测验满分 <b>100%</b>。']
+ ],
+ duty:[
+  ['我负责','2 项任务<b>全程独立完成</b>：赢家识别判断 + 滞销品恢复策略'],
+  ['我做了','销售数据对比识别赢家 → <b>三问框架</b>验证结论是否站得住 → 英文商务邮件向上建议加码 → 为滞销品设计 <b>3 套恢复方案</b>并做取舍权衡'],
+  ['我产出','<b>13 页</b>作品集 deck · 英文建议邮件 · 中英双语恢复策略文档 · 测验满分 <b>100%</b>']
+ ],
+ tags:['销售数据分析','选品判断','定价分析','商务沟通','中英双语文档'],
+ secs:[{t:'口径说明',h:'📎',p:'本项目为 Walmart 在 FORAGE 平台官方发布的岗位模拟，<b>数据集为教学用虚构数据</b>；测验评分、任务场景与证书真实，交付物（13 页作品集 PPT、英文商务邮件、恢复策略文档）均为本人独立完成。'}],
+ subs:[
+  {t:'Task 1 · Spot the Winner',h:'🏆',d:'用销售数据对比识别赢家：Trail Mix 校园店 +64%、城市店 +50%，且 $4.19 对全国品牌 $5.49 有价格优势；再用三问框架验证结论是否站得住，最后写成英文商务邮件向上建议加码。',n:'交付：给 Alex 的建议邮件'},
+  {t:'Task 2 · Recovery Strategy',h:'🩹',d:'诊断 Power Squares：流量 1,150 最高但转化 3.2% 最低、评分仅 3.1、定价 $5.79 偏高。设计三套恢复方案并做取舍权衡，说明各自代价与适用条件。',n:'交付：能量方块产品改善恢复策略（中英双语）'}
+ ],
+ files:[
+  {k:'PPT',i:'📊',n:'Associate Merchant 作品集（13 页）',s:'PPT 原稿 · 已转 PDF，点开即读',p:D+'02a-FORAGE沃尔玛副商人作品集.pdf'},
+  {k:'Word',i:'📝',n:'能量方块产品改善恢复策略',s:'Word 原稿 · 中英双语 · 已转 PDF',p:D+'04b-能量方块恢复策略.pdf'},
+  {k:'证书',i:'🏅',n:'FORAGE 荣誉证书（核验码 6aca16ff）',s:'PDF · 可在 FORAGE 官网核验',p:D+'02-Forage沃尔玛-证书.pdf'}
+ ]
+},
+{
+ id:'cat', src:'study', srcTxt:'桌面研究',
+ four:'赛道破局', name:'Douyin Budget Cat Niche', nameCn:'抖音猫咪赛道商业化 · 桌面研究',
+ sub:'把陌生赛道拆明白：7,682 字报告、200+ 一手评价，收敛 3 条商业化路径',
+ time:'2026.06 – 2026.11',
+ meta:'独立完成 · 桌面研究',
+ metrics:[{n:'7,682',c:'报告字数'},{n:'200+',c:'条一手评价样本'},{n:'30+',c:'起投诉案例'}],
+ star:[
+  ['痛点','抖音宠物食品高速扩张（成交 138 亿、同比 +88%），但<b>平价带怎么进、价格锚点定多少没人讲清</b>。'],
+  ['任务','把一个陌生赛道拆明白，并给出能直接落地的商业化建议。'],
+  ['行动','大盘与增速测算 → 价格带与竞品拆解 → 挖 <b>200+ 条真实用户评价</b>与 <b>30+ 起投诉</b>做一手痛点验证 → 输出三个机会方向与定价组合。'],
+  ['效果','<b>7,682 字 · 200+ 条一手评价 · 30+ 起投诉 · 14 个信源</b> —— 把「感觉」变成可验证的痛点清单，据此收敛出 3 条落地路径与<b>主推 29.9 元 / 引流 15.9 元</b>的价格组合，并写明结论成立的前提与失效边界。']
+ ],
+ duty:[
+  ['我负责','选题、调研、分析、成稿<b>全流程独立完成</b>'],
+  ['我做了','大盘与增速测算 → 价格带与竞品拆解 → 逐条归类 <b>200+ 条真实评价</b> 与 <b>30+ 起投诉</b>验证痛点 → 收敛机会方向'],
+  ['我产出','<b>7,682 字</b>完整报告（14 个信源）· 3 条落地路径 · 主推 <b>29.9 元</b> / 引流 <b>15.9 元</b>价格组合']
+ ],
+ tags:['赛道研判','市场规模测算','竞品对标','一手样本挖掘','定价策略','商业化路径'],
+ secs:[{t:'口径说明',h:'📎',p:'本报告为<b>桌面研究</b>，一手样本（200+ 条用户评价、30+ 起投诉）为本人真实采集与归类，但结论<b>尚未在真实业务中落地</b>。赛道规模类数字（如 138 亿）为公开数据引用，用于说明选题价值，非本人业绩。'}],
+ subs:[
+  {t:'赛道概览与大盘测算',h:'🌐',d:'从抖音宠物食品大盘、增速、动销商家与商品数变化判断赛道阶段，确认平价带的窗口。'},
+  {t:'价格带拆解',h:'💰',d:'拆解 9.9–19.9 主力价格带与竞品分布，找出价格锚点与被忽略的空白区间。'},
+  {t:'用户痛点挖掘（一手）',h:'🔍',d:'200+ 条真实用户评价逐条归类，30+ 起投诉案例定位高频问题，把「感觉」变成可验证的痛点清单。'},
+  {t:'三个机会方向',h:'🎯',d:'基于痛点与竞品空白，收敛出三个可切入的机会方向，并说明各自的前提条件。'},
+  {t:'落地建议与定价组合',h:'📦',d:'主推 29.9 元、引流 15.9 元的价格组合，配套内容、渠道与转化动作建议。'},
+  {t:'风险与边界',h:'⚠️',d:'明确列出结论适用的前提条件与不成立的情形——研究的可信度来自敢写边界。'}
+ ],
+ files:[
+  {k:'Word',i:'📄',n:'抖音平价猫咪用品赛道商业化分析报告',s:'Word 原稿 · 已转 PDF，点开即读',p:D+'05-抖音猫咪赛道商业化分析.pdf'}
+ ]
+},
+{
+ id:'campus', src:'real', srcTxt:'真实运营',
+ four:'私域闭环', name:'Campus Private-Domain Operations', nameCn:'校园私域生态运营 · 抖音/小红书/微信真实落地',
+ sub:'搭建公域触达—私域承接—交易服务全链路，2,667 人分层社群 + 三级风控机制',
+ time:'2026.08 – 至今',
+ meta:'团队 5 人 · 核心成员',
+ cal:'',
+ metrics:[{n:'2,667',c:'社群覆盖人数'},{n:'3,400+',c:'抖音矩阵获赞'},{n:'70+',c:'内容作品'}],
+ star:[
+  ['痛点','校园信息散落在几十个群和账号，<b>新生找不到可靠入口</b>；C2C 闲置交易无规则、纠纷频发；骗局伪装深，只能事后删帖。'],
+  ['任务','搭建「公域触达 → 私域沉淀 → 交易服务」全链路，并把运转规则沉淀成可复用 SOP。'],
+  ['行动','抖音 + 小红书双端做公域内容触达；<b>按身份分层建群</b>承接（新生 / 答疑 / 研究生 / 口碑榜）；制定交易治理规则与风控机制；按用户反馈迭代服务品类。'],
+  ['效果','<b>覆盖 2,667 人 · 70+ 作品 · 3,400+ 获赞</b> —— 分层社群矩阵（新生 869 / 新生二群 500 / 答疑 485 / 研究生 447 / 口碑榜 366）跑通全周期；建立<b>先审后发 + 分层处置 + 事前预警</b>三级风控，把风控从「事后删帖」前移到「事前提醒」。']
+ ],
+ duty:[
+  ['我负责','5 人团队<b>核心成员</b>，重点负责<b>内容信息触达 · 社群承接 · 供需治理 · 风险预警</b>'],
+  ['我做了','抖音 + 小红书双端公域触达 → 按身份分层建 <b>5 类社群</b> → 制定交易治理规则与三级风控 → 按用户反馈迭代服务品类'],
+  ['我产出','<b>2,667 人</b>分层社群矩阵 · <b>70+</b> 内容作品 · <b>3,400+</b> 获赞 · 标准服务 SOP 与风控机制']
+ ],
+ tags:['用户分层','内容触达','社群 SOP','供需治理','风控预警','需求迭代'],
+ secs:[
+  {t:'项目概述',h:'📌',p:'面向校园人群的垂直赛道运营实践，锁定「学生群体 + 全场景校园信息服务 + C2C 闲置交易」，搭建覆盖抖音、小红书公域内容阵地，微信、QQ 社群私域承接阵地，以及贴吧、哆啦校圈等交易与服务板块的一体化运营体系。项目以信息服务为核心，全程不盈利、不售卖商品。'},
+  {t:'我负责什么',h:'🙋',p:'作为 5 人运营团队的核心成员，深度参与垂直赛道研判、多平台矩阵布局、公私域链路搭建；重点负责<b>内容信息触达、社群承接、供需治理与风险预警</b>四个执行环节，并针对校园高频骗局（兼职刷单、虚假交易、代拿代办、冒充身份）在多平台识别线索、联动揭发。'}
+ ],
+ subs:[
+  {t:'垂直赛道研判与多平台矩阵布局',h:'🧭',d:'基于「触点—承接—交易」三段式做阵地分工：抖音、小红书承担公域触达，微信、QQ 社群承担私域沉淀，贴吧与校圈承担交易服务，统一规划协同规则避免矩阵内耗。',n:'对标行业运营'},
+  {t:'公域内容阵地与信息触达',h:'📣',d:'围绕学生高频刚需搭建垂直内容矩阵，不做泛娱乐内容；熟悉双平台分发逻辑，账号侧配置社群入口，构建「内容触达 — 一键入群」的低摩擦承接路径。结果：抖音获赞 3,400+、粉丝近千、作品 70+；小红书粉丝与赞藏各千余。',n:'对标电商运营'},
+  {t:'私域承接与用户服务生态',h:'💬',d:'按需求场景搭建分层社群矩阵（新生交流群 869、新生二群 500、答疑群 485、研究生群 447、口碑榜单群 366），辅号开放低门槛入口实现流量分层引导；同步建立标准服务 SOP——高频问题知识库、统一答复口径、风险提示机制。',n:'对标产品运营'},
+  {t:'闲置交易生态与供需治理',h:'🔁',d:'梳理专区供需结构与信息分类，建立发布规范与风险管控机制，识别并处置虚假违规信息；同时以真实用户身份参与二手买卖，用一线体验校准治理规则。',n:'对标电商运营'},
+  {t:'全场景校园服务生态',h:'🧩',d:'搭建即时跑腿、失物招领、选课交流、热点话题、社交表达、官方通告等全场景承接体系，把「信息发布号」升级为覆盖生活服务的垂直生态。',n:'对标产品运营'},
+  {t:'内容治理与风险防控体系',h:'🛡️',d:'建立双重防线：全渠道先审后发 + 高频巡查；持续收集骗局线索，对兼职刷单、虚假交易、代拿代办、冒充身份等多类骗局联动揭发公示，把风控从事后删帖前移到事前提醒。'},
+  {t:'需求驱动与体系迭代',h:'🔄',d:'从公域咨询、私域反馈、审核巡查中收集高频问题与信息盲区，结构化归类后驱动口碑榜单、避坑指引、答疑内容持续更新，反向优化内容方向与板块规则。',n:'对标产品运营'},
+  {t:'关键困难与突破',h:'🧗',d:'① 冷启动无信任：从新生答疑、录取查询、宿舍楼信息等刚需内容切入，逐步沉淀自然流量。② 审核压力大：建立先审后发与分层处置标准，把审核从经验判断升级为标准流程。③ 交易信息真假难辨：搭建垂直闲置社群 + 发布规范 + 风险管控。④ 骗局伪装深：多渠道联动揭发 + 风险预警机制，形成「信息服务 + 风险防控」双轮驱动。'}
+ ],
+ files:[
+  {k:'Word',i:'📄',n:'校园私域生态运营全链路复盘（正文）',s:'Word 原稿 · 已转 PDF，点开即读',p:D+'03-校园私域生态运营.pdf'}
+ ]
+},
+{
+ id:'ind', src:'study', srcTxt:'桌面研究',
+ four:'双端洞察', name:'Platform × Brand Operations Study', nameCn:'运营行业研究 · 平台端×品牌端',
+ sub:'两份报告 + 五维对照表，提炼「平台看机制、品牌看利润」可互译方法论',
+ time:'2026.06 – 2026.11',
+ meta:'独立完成 · 桌面研究 · 两份报告',
+ metrics:[{n:'1.24万',c:'总字数'},{n:'2',c:'份独立报告'},{n:'5',c:'维对照'}],
+ star:[
+  ['痛点','平台端与品牌端的运营逻辑差异极大，<b>市面上多数分析只讲一端，两套经验无法互译</b>。'],
+  ['任务','分别拆解两端再做对照，找出可互相翻译的运营方法。'],
+  ['行动','平台端看机制与大盘（网上零售规模、互联网广告盘子、货架电商占比）；品牌端看单盘与利润（代运营集中度、私域打通率、自播替代达播）；最后五个维度对照。'],
+  ['效果','<b>1.24 万字 · 2 份独立报告 · 5 维对照表</b> —— 得出可复用的判断框架「<b>平台看机制、品牌看利润</b>，两套经验可互译」：平台端的机制敏感度 = 品牌端的规则套利能力，品牌端的利润结构意识可反向校准平台端对商家健康度的判断。']
+ ],
+ duty:[
+  ['我负责','选题、资料收集、分析成稿<b>全流程独立完成</b>'],
+  ['我做了','平台端拆机制与大盘 → 品牌端拆单盘与利润结构 → <b>五个维度</b>对照，提炼两套经验如何互译'],
+  ['我产出','<b>2 份</b>独立报告合计 <b>1.24 万字</b> · 5 维对照表 · 可复用判断框架']
+ ],
+ tags:['产业链拆解','市场规模测算','竞品对标','报告撰写','结构化表达'],
+ secs:[{t:'口径说明',h:'📎',p:'两份报告均为<b>桌面研究</b>，数据来自公开行业报告与券商研报（二手数据），用于呈现分析框架与判断能力，非本人操盘业绩。'}],
+ subs:[
+  {t:'子目 A · 平台端运营行业分析',h:'🏛️',d:'看机制与大盘：网上零售规模与增速、互联网广告盘子、抖音电商 GMV 跃迁、货架电商占比变化，回答「平台靠什么赚钱、规则往哪走」。',n:'含完整目录 + 五维对比表'},
+  {t:'子目 B · 品牌端运营行业分析',h:'🏷️',d:'看单盘与利润：代运营市场规模与集中度、私域 CDP 与实际打通率的落差、自播替代达播的结构性变化，回答「品牌在平台上怎么把利润做出来」。',n:'含完整目录 + 五维对比表'},
+  {t:'对照结论 · 两套经验如何互译',h:'🔀',d:'平台端的「机制敏感度」可以翻译成品牌端的「规则套利能力」；品牌端的「利润结构意识」可以反过来校准平台端对商家健康度的判断——这是这份研究真正的观点。'}
+ ],
+ files:[
+  {k:'Word',i:'📄',n:'平台端运营行业分析报告',s:'Word 原稿 · 已转 PDF，点开即读',p:D+'06a-平台端行业分析.pdf'},
+  {k:'Word',i:'📄',n:'品牌端运营行业分析报告',s:'Word 原稿 · 已转 PDF，点开即读',p:D+'06b-品牌端行业分析.pdf'}
+ ]
+}];
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+
+/* duty 现在是 [标签,内容] 数组，兼容纯文本回退 */
+function dutyTxt(d){
+  if(Array.isArray(d)) return d.map(function(r){return String(r[1]).replace(/<[^>]+>/g,'');}).join(' · ');
+  return String(d||'');
+}
+
+function kindCls(k){
+  return ({'PPT':'k-ppt','Word':'k-word','表格':'k-xls','视频':'k-video','证书':'k-cert','导图':'k-img','PDF':'k-pdf'})[k]||'k-pdf';
+}
+
+function cardHTML(p){
+  var m='';
+  p.metrics.forEach(function(x){
+    m+='<div class="m"><div class="m-num">'+x.n+'</div><div class="m-cap">'+x.c+'</div>'+
+       (x.note?'<div class="m-note">'+x.note+'</div>':'')+'</div>';
+  });
+  var t='';
+  p.tags.forEach(function(x){ t+='<span>'+x+'</span>'; });
+  var acc='';
+  (p.subs||[]).forEach(function(x){
+    acc+='<div class="acc-item"><div class="ai-t"><span>'+x.h+'</span>'+esc(x.t)+'</div>'+
+         '<div class="ai-d">'+esc(x.d)+'</div>'+(x.n?'<div class="ai-n">'+x.n+'</div>':'')+'</div>';
+  });
+  (p.secs||[]).forEach(function(x){
+    acc+='<div class="acc-item"><div class="ai-t"><span>'+x.h+'</span>'+esc(x.t)+'</div>'+
+         '<div class="ai-d">'+x.p+'</div></div>';
+  });
+  return '<section class="card proj" id="card-'+p.id+'">'+
+    '<div class="p-top"><span class="src src-'+p.src+'">'+p.srcTxt+'</span>'+
+      '<span class="p-time">📅 '+esc(p.time)+'</span>'+
+      '<span class="p-meta">'+esc(p.meta)+'</span></div>'+
+    '<div class="p-head"><div class="p-four">'+p.four+'</div><div class="p-name"><span class="p-ncn">'+esc(p.nameCn)+'</span>'+
+      (p.name?'<span class="p-en">'+esc(p.name)+'</span>':'')+'</div>'+
+      '<div class="p-sub">'+esc(p.sub)+'</div>'+(p.cal?'<div class="p-cal">'+esc(p.cal)+'</div>':'')+'</div>'+
+    '<div class="metrics">'+m+'</div>'+
+    '<div class="p-duty">'+
+      '<div class="pd-r"><span class="pd-k">我负责</span><span class="pd-v">'+p.star[1][1]+'</span></div>'+
+      '<div class="pd-r"><span class="pd-k">我做了</span><span class="pd-v">针对「'+p.star[0][1]+'」，'+p.star[2][1]+'</span></div>'+
+      '<div class="pd-r"><span class="pd-k">我产出</span><span class="pd-v">'+p.star[3][1]+'</span></div>'+
+    '</div>'+
+    '<div class="tags">'+t+'</div>'+
+    '<div class="fcap">📦 交付物 · 点开即看</div>'+
+    '<div class="files">'+filesHTML(p.files)+'</div>'+
+    '<button class="acc-btn" style="margin-top:11px" onclick="toggleAcc(\''+p.id+'\')">展开 '+((p.subs||[]).length)+' 个执行细节 ▾</button>'+
+    '<div class="acc-body" id="acc-'+p.id+'">'+acc+'</div>'+
+  '</section>';
+}
+
+function toggleAcc(id){
+  var b=document.getElementById('acc-'+id);
+  b.classList.toggle('open');
+  var btn=b.previousElementSibling;
+  btn.textContent = b.classList.contains('open') ? '收起执行细节 ▴' : '展开 '+b.querySelectorAll('.acc-item').length+' 个执行细节 ▾';
+}
+
+/* 每块独立渲染 + 兜底：任何一块出错都不能再拖垮整页 */
+function safeRender(id,fn,fallback){
+  try{
+    document.getElementById(id).innerHTML=fn();
+  }catch(err){
+    console.error('[render '+id+']',err);
+    if(fallback) document.getElementById(id).innerHTML=fallback;
+  }
+}
+safeRender('projList',function(){ return ['campus','omni','wm','cat','ind'].map(function(id){return P.filter(function(x){return x.id===id;})[0];}).map(cardHTML).join(''); },
+  P.map(function(p){ return '<div class="card"><div class="c-h"><b>'+esc(p.b||'')+'</b></div>'+
+    '<div style="padding:12px;font-size:13px;color:#4a5b6b">'+esc(p.t||'')+'</div></div>'; }).join(''));
+
+/* ===== 面板：二级 / 三级 ===== */
+var stack=[];
+function openProj(id){
+  stack=[{pid:id,i:-1}];
+  render();
+  document.getElementById('panel').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function render(){
+  var cur=stack[stack.length-1];
+  var p=P.find(function(x){return x.id===cur.pid;});
+  if(cur.i<0) renderL2(p); else renderSub(p,p.subs[cur.i]);
+  setCrumb(p);
+}
+function setCrumb(p){
+  var parts=[p.name];
+  for(var k=1;k<stack.length;k++) parts.push(stack[k].title||'');
+  document.getElementById('c1').textContent=parts.filter(Boolean).join(' › ');
+  document.getElementById('c2').textContent=stack.length>1?(stack[stack.length-1].title||p.name):p.name;
+}
+function renderL2(p){
+  var h='';
+  h+='<div class="card"><div class="p-top"><span class="src src-'+p.src+'">'+p.srcTxt+'</span>'+
+      '<span class="p-meta">'+esc(p.meta)+'</span></div>'+
+      '<div class="p-head"><div class="p-four">'+p.four+'</div><div class="p-name"><span class="p-ncn">'+esc(p.nameCn)+'</span>'+
+      (p.name?'<span class="p-en">'+esc(p.name)+'</span>':'')+'</div>'+
+      '<div class="p-sub">'+esc(p.sub)+'</div>'+(p.cal?'<div class="p-cal">'+esc(p.cal)+'</div>':'')+'</div>'+
+      '<div class="metrics">'+p.metrics.map(function(x){
+        return '<div class="m"><div class="m-num">'+x.n+'</div><div class="m-cap">'+x.c+'</div>'+
+        (x.note?'<div class="m-note">'+x.note+'</div>':'')+'</div>';}).join('')+'</div></div>';
+
+  h+='<div class="card"><h2><span class="hico">📖</span>项目全貌 · 我负责 / 我做了 / 我产出</h2>'+
+     '<div class="p-duty">'+
+      '<div class="pd-r"><span class="pd-k">我负责</span><span class="pd-v">'+p.star[1][1]+'</span></div>'+
+      '<div class="pd-r"><span class="pd-k">我做了</span><span class="pd-v">针对「'+p.star[0][1]+'」，'+p.star[2][1]+'</span></div>'+
+      '<div class="pd-r"><span class="pd-k">我产出</span><span class="pd-v">'+p.star[3][1]+'</span></div>'+
+     '</div></div>';
+
+  (p.secs||[]).forEach(function(s){
+    h+='<div class="p-sec"><h3><span>'+s.h+'</span>'+esc(s.t)+'</h3><p>'+s.p+'</p></div>';
+  });
+
+  h+='<h2 style="font-size:16px;padding:0 2px">细分模块 · 点开看细节</h2>';
+  p.subs.forEach(function(s,i){
+    h+='<div class="sub-card" onclick="openSub(\''+p.id+'\','+i+')">'+
+       '<div class="sc-t"><span>'+s.h+'</span>'+esc(s.t)+'<span class="go">›</span></div>'+
+       '<div class="sc-d">'+esc(s.d)+'</div>'+(s.n?'<div class="sc-n">'+esc(s.n)+'</div>':'')+'</div>';
+  });
+
+  h+='<div class="card"><h2><span class="hico">📦</span>全部附件 · '+p.files.length+' 份</h2><div class="files">'+filesHTML(p.files)+'</div></div>';
+  document.getElementById('pBody').innerHTML=h;
+  document.getElementById('pBody').scrollTop=0;
+}
+function openSub(pid,i){
+  stack.push({pid:pid,i:i,title:P.find(function(x){return x.id===pid;}).subs[i].t});
+  render();
+}
+function renderSub(p,s){
+  var h='<div class="card"><h2><span class="hico">'+s.h+'</span>'+esc(s.t)+'</h2>'+
+        '<p style="font-size:13px;line-height:1.8;color:#3c4a58">'+esc(s.d)+'</p>'+
+        (s.n?'<p class="hint">'+esc(s.n)+'</p>':'')+'</div>';
+  h+='<div class="card"><h2><span class="hico">📦</span>本项目附件</h2><div class="files">'+filesHTML(p.files)+'</div></div>';
+  document.getElementById('pBody').innerHTML=h;
+  document.getElementById('pBody').scrollTop=0;
+}
+function dataTableHTML(){
+  var rows=CH_ROWS.map(function(r){
+    var conv=r[4]/r[3], cac=r[1]/r[4], roi=(r[5]-r[1])/r[1];
+    return {n:r[0],s:r[1],rc:r[2],ld:r[3],cv:r[4],rv:r[5],cr:conv,cac:cac,roi:roi};
+  });
+  var bestRoi=Math.max.apply(null,rows.map(function(x){return x.roi;}));
+  var bestCr=Math.max.apply(null,rows.map(function(x){return x.cr;}));
+  var bestCac=Math.min.apply(null,rows.map(function(x){return x.cac;}));
+  var worstCr=Math.min.apply(null,rows.map(function(x){return x.cr;}));
+  var worstCac=Math.max.apply(null,rows.map(function(x){return x.cac;}));
+  var worstRoi=Math.min.apply(null,rows.map(function(x){return x.roi;}));
+  var avgCr=rows.reduce(function(a,x){return a+x.cr;},0)/rows.length;
+  var avgCac=rows.reduce(function(a,x){return a+x.cac;},0)/rows.length;
+  var avgRoi=rows.reduce(function(a,x){return a+x.roi;},0)/rows.length;
+
+  function cell(v,l,hl){ return '<div class="dt-i'+(hl?' hl':'')+'"><b>'+v+'</b><span>'+l+'</span></div>'; }
+  function card(name,badge,cells,tail){
+    return '<div class="dt-c'+(badge?' star':'')+'">'+
+      '<div class="dt-h"><span class="dt-n">'+name+'</span>'+(badge?'<span class="dt-b">'+badge+'</span>':'')+'</div>'+
+      '<div class="dt-raw">'+cells+'</div>'+
+      '<div class="dt-kpi">'+tail+'</div></div>';
+  }
+  var h='<div class="dt">';
+  rows.forEach(function(x){
+    var badge = x.roi===bestRoi ? 'ROI 最优' : (x.cac===bestCac ? 'CAC 最低' : '');
+    h+=card(x.n, badge,
+      cell('$'+x.s.toLocaleString(),'花费')+cell(x.rc.toLocaleString(),'曝光')+
+      cell(x.ld.toLocaleString(),'线索')+cell('$'+x.cv.toLocaleString(),'转化')+cell('$'+x.rv.toLocaleString(),'收入'),
+      cell((x.cr*100).toFixed(1)+'%','转化率',x.cr===bestCr)+
+      cell('$'+x.cac.toFixed(2),'CAC',x.cac===bestCac)+
+      cell((x.roi*100).toFixed(0)+'%','ROI',x.roi===bestRoi));
+  });
+  h+=card('八渠道平均','',
+      '<div class="dt-sum">整体均值，用于判断单个渠道跑赢 / 跑输大盘</div>',
+      cell((avgCr*100).toFixed(1)+'%','平均转化率')+cell('$'+avgCac.toFixed(2),'平均 CAC')+cell((avgRoi*100).toFixed(0)+'%','平均 ROI'));
+  h+=card('最优 vs 最差','',
+      '<div class="dt-sum">差距就是预算再分配的依据</div>',
+      cell((bestCr*100).toFixed(1)+'%','最高转化率')+cell('$'+bestCac.toFixed(2),'最低 CAC')+cell((bestRoi*100).toFixed(0)+'%','最高 ROI')+
+      cell((worstCr*100).toFixed(1)+'%','最低转化率')+cell('$'+worstCac.toFixed(2),'最高 CAC')+cell((worstRoi*100).toFixed(0)+'%','最低 ROI'));
+  h+='</div>';
+  h+='<div class="dt-note">口径：转化率 = 转化数 ÷ 线索数；CAC = 花费 ÷ 转化数；ROI =（收入 − 花费）÷ 花费。'+
+     '加亮为该项最优值。完整原表见上方 Excel 附件，8 渠道 × 9 项指标逐项对应。</div>';
+  return h;
+}
+function filesHTML(fs){
+  return fs.map(function(f){
+    var k='<span class="fkind '+kindCls(f.k)+'">'+esc(f.k||'PDF')+'</span>';
+    if(f.img){
+      /* 内嵌用压缩缩略图（约 160KB），点「放大」才加载原图（1.5MB 高清，可双指缩放） */
+      var th=f.img.replace(/\/img\//,'/img/t/').replace(/\.png$/,'.jpg');
+      return '<div class="fchip">'+k+'<span class="fi">'+f.i+'</span><div class="fn"><div class="n">'+esc(f.n)+'</div>'+
+        '<div class="s">'+esc(f.s)+'</div></div>'+
+        '<button class="act" onclick="openImg(\''+f.img+'\')">放大</button></div>'+
+        '<img class="mm" src="'+th+'" loading="lazy" alt="'+esc(f.n)+'" onclick="openImg(\''+f.img+'\')">';
+    }
+    if(f.video){
+      return '<div class="fchip">'+k+'<span class="fi">'+f.i+'</span><div class="fn"><div class="n">'+esc(f.n)+'</div>'+
+        '<div class="s">'+esc(f.s)+'</div></div></div>'+
+        '<div class="vbox" onclick="loadVideo(this)"><div class="play"></div><div class="cap">'+esc(f.n)+' · 点开才加载</div></div>';
+    }
+    return '<div class="fchip">'+k+'<span class="fi">'+f.i+'</span><div class="fn"><div class="n">'+esc(f.n)+'</div>'+
+      '<div class="s">'+esc(f.s)+'</div></div>'+
+      '<div class="acts">'+
+      '<a class="act" href="'+f.p+'" target="_blank" rel="noopener" onclick="return openDocLink(event,\''+f.p+'\',\''+esc(f.n)+'\')">打开</a>'+
+      '<a class="act ghost" href="'+f.p+'" download>下载</a>'+
+      '</div></div>'+(f.tbl?dataTableHTML():'');
+  }).join('');
+}
+function loadVideo(box){
+  box.innerHTML='<video controls autoplay preload="metadata" playsinline src="'+V+'ambassador.mp4"></video>';
+}
+function setCrumb(){
+  var top=stack[stack.length-1];
+  document.getElementById('c1').textContent=stack.map(function(x){return x.t;}).join(' › ');
+  document.getElementById('c2').textContent=top.c;
+}
+document.getElementById('pBack').onclick=function(){
+  if(stack.length>1){ stack.pop(); render(); }
+  else { closePanel(); }
+};
+function closePanel(){
+  document.getElementById('panel').classList.remove('open');
+  document.body.style.overflow='';
+  stack=[];
+}
+/* 文档预览：逐页图片（PDF 已预渲染为 JPG，任何浏览器/环境都能直接看，不依赖内嵌 PDF） */
+var vwFallbackTimer=null, vwPages=[], vwPath='', vwName='';
+/* 一次性把全部页渲染进 DOM，交给浏览器原生 lazy 加载逐页取图。
+   不再依赖「滚动到底再注入下一批」——之前那套在部分手机上滚动事件不触发，
+   导致后面的页一直空白（即用户说的「显示不完全 / 打不开」）。原生 lazy 在手机和电脑都稳。 */
+function vwRenderAll(){
+  var body=document.getElementById('vwBody');
+  if(!body) return;
+  var frag='';
+  for(var i=0;i<vwPages.length;i++){
+    frag+='<img class="vw-pg" src="'+vwPages[i]+'" alt="第 '+(i+1)+' 页" '+
+          (i<2?'fetchpriority="high"':'loading="lazy"')+' onerror="vwPgFail(this,'+i+')">';
+  }
+  body.innerHTML=frag;
+  var tip=document.createElement('div');
+  tip.className='vw-tip';
+  tip.innerHTML='共 '+vwPages.length+' 页 · 下滑逐页浏览，单页可双指放大';
+  body.appendChild(tip);
+}
+function vwPgFail(el,i){
+  var box=document.createElement('div');
+  box.className='vw-pfail';
+  box.innerHTML='第 '+(i+1)+' 页加载失败（网络或内存不足）<br>'+
+    '<a href="'+vwPath+'" target="_blank" rel="noopener" style="color:var(--accent-deep);font-weight:600">新标签页打开原文件</a> · '+
+    '<a href="'+vwPath+'" download style="color:var(--accent-deep);font-weight:600">下载</a>';
+  if(el.parentNode) el.parentNode.replaceChild(box,el);
+}
+function openDocLink(e,path,name){
+  e.preventDefault(); openDoc(path,name); return false;
+}
+function openDoc(path,name){
+  document.getElementById('vwT').textContent=name||'文档预览';
+  var d=document.getElementById('vwDown'), t=document.getElementById('vwTab');
+  d.href=path; t.href=path;
+  var body=document.getElementById('vwBody');
+  var pages=(window.DOC_PAGES||{})[path];
+  if(pages && pages.length){
+    vwPages=pages; vwPath=path; vwName=name||'';
+    body.className='vw-body pages';
+    body.onscroll=null;
+    vwRenderAll();
+  }else{
+    /* 没有分页图：不赌浏览器内嵌 PDF，直接给「新标签页打开 / 下载」两个按钮 */
+    body.className='vw-body';
+    showVWFallback(path,name);
+  }
+  document.getElementById('vw').classList.add('show');
+  document.body.style.overflow='hidden';
+}
+function showVWFallback(path,name){
+  document.getElementById('vwBody').innerHTML=
+    '<div class="vw-fb"><div class="h">当前浏览器无法内嵌预览 PDF</div>'+
+    '<div class="d">文件本身是好的。点下面任一按钮即可查看「'+esc(name||'文档')+'」。</div>'+
+    '<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">'+
+    '<a class="b pri" href="'+path+'" target="_blank" rel="noopener" style="padding:9px 16px">在新标签页打开</a>'+
+    '<a class="b" href="'+path+'" download style="padding:9px 16px">下载到本地</a></div></div>';
+}
+function closeVW(){
+  clearTimeout(vwFallbackTimer);
+  vwPages=[];
+  var _b=document.getElementById('vwBody'); if(_b) _b.onscroll=null;
+  document.getElementById('vw').classList.remove('show');
+  document.getElementById('vwBody').innerHTML='';
+  if(!document.getElementById('lb').classList.contains('show')) document.body.style.overflow='';
+}
+document.getElementById('vw').addEventListener('click',function(e){ if(e.target===this) closeVW(); });
+function openImg(src){
+  document.getElementById('lbImg').src=src;
+  document.getElementById('lb').classList.add('show');
+  document.body.style.overflow='hidden';
+}
+function closeLB(){
+  document.getElementById('lb').classList.remove('show');
+  if(!document.getElementById('panel').classList.contains('open')) document.body.style.overflow='';
+}
+
+/* 邮箱 */
+function showMail(){
+  document.getElementById('mailBtn').style.display='none';
+  document.getElementById('mailVal').classList.add('show');
+}
+document.getElementById('footMail').innerHTML='<button class="mailbtn" onclick="showMail()">点击显示邮箱</button>';
+
+/* 导航 + 回到顶部 */
+document.getElementById('nav').addEventListener('click',function(e){
+  var a=e.target.closest('a'); if(!a) return;
+  document.querySelectorAll('#nav a').forEach(function(x){x.classList.remove('on');});
+  a.classList.add('on');
+  var el=document.getElementById(a.dataset.go);
+  if(el) el.scrollIntoView({behavior:'smooth'});
+});
+var toTop=document.getElementById('toTop');
+window.addEventListener('scroll',function(){ toTop.classList.toggle('show', window.scrollY>400); },{passive:true});
+toTop.addEventListener('click',function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+
+/* 访问统计（仅自己可见，页面无任何痕迹） */
+var FROM=(new URLSearchParams(location.search).get('from')||'直接访问');
+var BS_SEQ=0;
+function bsLoad(cb){
+  try{
+    var fn='BusuanziCallback_'+(++BS_SEQ)+'_'+Date.now();
+    var s=document.createElement('script');
+    s.src='https://busuanzi.ibruce.info/busuanzi?jsonpCallback='+fn;
+    s.async=true;
+    window[fn]=function(d){
+      try{ cb(d); }catch(e){}
+      try{ s.parentNode.removeChild(s); delete window[fn]; }catch(e){}
+    };
+    s.onerror=function(){ try{ cb(null); }catch(e){} };
+    document.body.appendChild(s);
+    setTimeout(function(){ try{ delete window[fn]; }catch(e){} },8000);
+  }catch(e){ try{ cb(null); }catch(e2){} }
+}
+function hit(){
+  try{
+    bsLoad(function(d){ if(d){ window.__tv=d.site_pv; window.__uv=d.site_uv; } });
+  }catch(e){}
+}
+hit();
+if(location.hash==='#stat'){ setTimeout(openStat,900); }
+function openStat(){
+  document.getElementById('statp').classList.add('show');
+  document.getElementById('stPv').textContent=window.__tv||'–';
+  document.getElementById('stUv').textContent=window.__uv||'–';
+  document.getElementById('stCh').textContent='本次来源渠道：'+FROM;
+  bsLoad(function(d){
+    if(!d) return;
+    document.getElementById('stPv').textContent=d.site_pv;
+    document.getElementById('stUv').textContent=d.site_uv;
+  });
+}
+function closeStat(){ document.getElementById('statp').classList.remove('show'); }
+</script>
+</body>
+</html>
