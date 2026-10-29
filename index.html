@@ -289,9 +289,15 @@ a.fchip{text-decoration:none;color:inherit}
 .mm{width:100%;border-radius:8px;border:1px solid var(--line);cursor:zoom-in;display:block}
 .lb{position:fixed;inset:0;z-index:300;background:rgba(10,10,12,.94);display:none;overflow:auto}
 .lb.show{display:block}
-.lb img{width:100%;display:block}
+.lb img{width:100%;display:block;transition:filter .22s ease}
+.lb img.loading{filter:blur(9px)}
+.lb-spin{position:fixed;left:50%;top:50%;width:28px;height:28px;margin:-14px 0 0 -14px;
+  border:2.5px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;
+  animation:lbspin .8s linear infinite;display:none;pointer-events:none;z-index:2}
+.lb.loading .lb-spin{display:block}
+@keyframes lbspin{to{transform:rotate(360deg)}}
 .lb .lb-close{position:fixed;right:14px;top:14px;width:40px;height:40px;border-radius:50%;border:none;
-  background:rgba(255,255,255,.92);font-size:18px;line-height:1;color:#111;font-family:inherit;cursor:pointer}
+  background:rgba(255,255,255,.92);font-size:18px;line-height:1;color:#111;font-family:inherit;cursor:pointer;z-index:3}
 
 /* ---------- 文档预览 ---------- */
 .vw{position:fixed;inset:0;z-index:400;background:rgba(12,12,14,.6);backdrop-filter:blur(2px);
@@ -449,6 +455,25 @@ a.fchip{text-decoration:none;color:inherit}
 @media(max-width:400px){
   .gnode .gsub{font-size:9.5px;letter-spacing:-.01em}
 }
+
+/* ---------- 手机端中文粗体兜底 ---------- */
+/* Android 中文系统字体只有 Regular 一个字重，浏览器又不对 CJK 做合成加粗，
+   导致 font-weight:700 渲染出来和 400 完全一样；用描边做几何加粗，与字体无关 */
+@media(max-width:720px){
+  /* 用 em 让描边跟着字号缩放：12px→0.34px，24px→0.67px（实测小字不糊、大字够粗） */
+  .p-lead b,.bk-b b,.sk2 b,.dt-i b,.tl-t,.sc-t,.p-sec h3,.mth-t,.pbar .nm,.p-crumb .c2,
+  .footmail b,.ct-v,.dt-n,.fchip .fn .n,.tl-date,.mailval,.logo,.brand .logo,
+  .card h2,.sec-t,.p-name,.p-ncn,.p-four,.m-num,.stat .num,.hero-row .nm,.hero .nm,
+  .bk-jd,.gnode .glabel,.vw-bar .t,.vw-fb .h,.sk-h .t,.cert .cn .n,.pbar-files .pf .pfk{
+    -webkit-text-stroke:.028em currentColor}
+  @supports not (-webkit-text-stroke:.028em currentColor){
+    .p-lead b,.bk-b b,.sk2 b,.dt-i b,.tl-t,.sc-t,.p-sec h3,.mth-t,.pbar .nm,.p-crumb .c2,
+    .footmail b,.ct-v,.dt-n,.fchip .fn .n,.tl-date,.mailval,.logo,.brand .logo,
+    .card h2,.sec-t,.p-name,.p-ncn,.p-four,.m-num,.stat .num,.hero-row .nm,.hero .nm,
+    .bk-jd,.gnode .glabel,.vw-bar .t,.vw-fb .h,.sk-h .t,.cert .cn .n,.pbar-files .pf .pfk{
+      text-shadow:.028em 0 0 currentColor,-.028em 0 0 currentColor}
+  }
+}
 </style>
 <script>window.DOC_PAGES={"assets/docs/01-Forage全渠道-证书.pdf": ["assets/pages/d01/p01.jpg"], "assets/docs/01a-FORAGE全渠道营销作品集.pdf": ["assets/pages/d02/p01.jpg", "assets/pages/d02/p02.jpg", "assets/pages/d02/p03.jpg", "assets/pages/d02/p04.jpg", "assets/pages/d02/p05.jpg", "assets/pages/d02/p06.jpg", "assets/pages/d02/p07.jpg", "assets/pages/d02/p08.jpg", "assets/pages/d02/p09.jpg", "assets/pages/d02/p10.jpg", "assets/pages/d02/p11.jpg", "assets/pages/d02/p12.jpg"], "assets/docs/01c-数字产品概念方案.pdf": ["assets/pages/d03/p01.jpg", "assets/pages/d03/p02.jpg", "assets/pages/d03/p03.jpg", "assets/pages/d03/p04.jpg", "assets/pages/d03/p05.jpg", "assets/pages/d03/p06.jpg", "assets/pages/d03/p07.jpg", "assets/pages/d03/p08.jpg", "assets/pages/d03/p09.jpg", "assets/pages/d03/p10.jpg", "assets/pages/d03/p11.jpg", "assets/pages/d03/p12.jpg", "assets/pages/d03/p13.jpg", "assets/pages/d03/p14.jpg", "assets/pages/d03/p15.jpg"], "assets/docs/01d-八大营销渠道简报.pdf": ["assets/pages/d04/p01.jpg", "assets/pages/d04/p02.jpg", "assets/pages/d04/p03.jpg", "assets/pages/d04/p04.jpg", "assets/pages/d04/p05.jpg", "assets/pages/d04/p06.jpg", "assets/pages/d04/p07.jpg", "assets/pages/d04/p08.jpg", "assets/pages/d04/p09.jpg", "assets/pages/d04/p10.jpg"], "assets/docs/01e-营销创意简报.pdf": ["assets/pages/d05/p01.jpg", "assets/pages/d05/p02.jpg", "assets/pages/d05/p03.jpg", "assets/pages/d05/p04.jpg", "assets/pages/d05/p05.jpg", "assets/pages/d05/p06.jpg", "assets/pages/d05/p07.jpg", "assets/pages/d05/p08.jpg", "assets/pages/d05/p09.jpg", "assets/pages/d05/p10.jpg", "assets/pages/d05/p11.jpg", "assets/pages/d05/p12.jpg", "assets/pages/d05/p13.jpg", "assets/pages/d05/p14.jpg", "assets/pages/d05/p15.jpg", "assets/pages/d05/p16.jpg", "assets/pages/d05/p17.jpg", "assets/pages/d05/p18.jpg", "assets/pages/d05/p19.jpg", "assets/pages/d05/p20.jpg", "assets/pages/d05/p21.jpg", "assets/pages/d05/p22.jpg", "assets/pages/d05/p23.jpg", "assets/pages/d05/p24.jpg", "assets/pages/d05/p25.jpg", "assets/pages/d05/p26.jpg", "assets/pages/d05/p27.jpg", "assets/pages/d05/p28.jpg", "assets/pages/d05/p29.jpg", "assets/pages/d05/p30.jpg", "assets/pages/d05/p31.jpg", "assets/pages/d05/p32.jpg", "assets/pages/d05/p33.jpg", "assets/pages/d05/p34.jpg", "assets/pages/d05/p35.jpg", "assets/pages/d05/p36.jpg", "assets/pages/d05/p37.jpg", "assets/pages/d05/p38.jpg", "assets/pages/d05/p39.jpg", "assets/pages/d05/p40.jpg"], "assets/docs/01f-超本地化大使推荐.pdf": ["assets/pages/d06/p01.jpg", "assets/pages/d06/p02.jpg", "assets/pages/d06/p03.jpg", "assets/pages/d06/p04.jpg", "assets/pages/d06/p05.jpg"], "assets/docs/01g-八大渠道数据分析表.pdf": ["assets/pages/d07/p01.jpg"], "assets/docs/02-Forage沃尔玛-证书.pdf": ["assets/pages/d08/p01.jpg"], "assets/docs/02a-FORAGE沃尔玛副商人作品集.pdf": ["assets/pages/d09/p01.jpg", "assets/pages/d09/p02.jpg", "assets/pages/d09/p03.jpg", "assets/pages/d09/p04.jpg", "assets/pages/d09/p05.jpg", "assets/pages/d09/p06.jpg", "assets/pages/d09/p07.jpg", "assets/pages/d09/p08.jpg", "assets/pages/d09/p09.jpg", "assets/pages/d09/p10.jpg", "assets/pages/d09/p11.jpg", "assets/pages/d09/p12.jpg", "assets/pages/d09/p13.jpg"], "assets/docs/03-校园私域生态运营.pdf": ["assets/pages/d10/p01.jpg", "assets/pages/d10/p02.jpg", "assets/pages/d10/p03.jpg", "assets/pages/d10/p04.jpg", "assets/pages/d10/p05.jpg", "assets/pages/d10/p06.jpg"], "assets/docs/04b-能量方块恢复策略.pdf": ["assets/pages/d11/p01.jpg", "assets/pages/d11/p02.jpg", "assets/pages/d11/p03.jpg", "assets/pages/d11/p04.jpg"], "assets/docs/05-抖音猫咪赛道商业化分析.pdf": ["assets/pages/d12/p01.jpg", "assets/pages/d12/p02.jpg", "assets/pages/d12/p03.jpg", "assets/pages/d12/p04.jpg", "assets/pages/d12/p05.jpg", "assets/pages/d12/p06.jpg", "assets/pages/d12/p07.jpg", "assets/pages/d12/p08.jpg", "assets/pages/d12/p09.jpg", "assets/pages/d12/p10.jpg"], "assets/docs/06a-平台端行业分析.pdf": ["assets/pages/d13/p01.jpg", "assets/pages/d13/p02.jpg", "assets/pages/d13/p03.jpg", "assets/pages/d13/p04.jpg", "assets/pages/d13/p05.jpg", "assets/pages/d13/p06.jpg", "assets/pages/d13/p07.jpg", "assets/pages/d13/p08.jpg", "assets/pages/d13/p09.jpg", "assets/pages/d13/p10.jpg", "assets/pages/d13/p11.jpg"], "assets/docs/06b-品牌端行业分析.pdf": ["assets/pages/d14/p01.jpg", "assets/pages/d14/p02.jpg", "assets/pages/d14/p03.jpg", "assets/pages/d14/p04.jpg", "assets/pages/d14/p05.jpg", "assets/pages/d14/p06.jpg", "assets/pages/d14/p07.jpg", "assets/pages/d14/p08.jpg", "assets/pages/d14/p09.jpg", "assets/pages/d14/p10.jpg", "assets/pages/d14/p11.jpg"]};</script>
 </head>
@@ -572,7 +597,7 @@ a.fchip{text-decoration:none;color:inherit}
   <div class="p-body" id="pBody"></div>
 </div>
 
-<div class="lb" id="lb"><button class="lb-close" onclick="closeLB()">×</button><img id="lbImg" alt="复盘导图"></div>
+<div class="lb" id="lb"><button class="lb-close" onclick="closeLB()">×</button><div class="lb-spin"></div><img id="lbImg" alt="复盘导图"></div>
 
 <div class="vw" id="vw">
   <div class="vw-bar">
@@ -903,6 +928,7 @@ function renderL2(p){
   var body=document.getElementById('pBody');
   body.innerHTML=h; body.scrollTop=0;
   purgeEmoji(body);
+  prefetchPanelDocs(body);   /* 面板打开后后台偷跑该项目文档首页，点开即命中 */
 }
 function dataTableHTML(){
   var rows=CH_ROWS.map(function(r){
@@ -1062,15 +1088,73 @@ function closeVW(){
   if(!document.getElementById('lb').classList.contains('show')) document.body.style.overflow='';
 }
 document.getElementById('vw').addEventListener('click',function(e){ if(e.target===this) closeVW(); });
+/* 导图：手机加载 1200px 压缩版（1.5MB -> 约 160KB），先出模糊占位再替换高清 */
+var _webpOK=(function(){try{return document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp')===0;}catch(e){return false;}})();
+function imgMob(src){ return src.replace(/^assets\/img\//,'assets/img/m/').replace(/\.png$/i,'')+(_webpOK?'.webp':'.jpg'); }
+function imgThumb(src){ return src.replace(/^assets\/img\//,'assets/img/t/').replace(/\.png$/i,'.jpg'); }
 function openImg(src){
-  document.getElementById('lbImg').src=src;
-  document.getElementById('lb').classList.add('show');
+  var lb=document.getElementById('lb'), im=document.getElementById('lbImg');
+  var thumb=imgThumb(src);
+  var full=(window.innerWidth<=760)?imgMob(src):src;
+  lb.classList.add('show','loading');
   document.body.style.overflow='hidden';
+  im.classList.add('loading');
+  im.src=thumb;
+  var hi=new Image();
+  hi.onload=function(){ im.classList.remove('loading'); lb.classList.remove('loading'); im.src=full; };
+  hi.onerror=function(){ im.classList.remove('loading'); lb.classList.remove('loading'); if(full!==src) im.src=src; };
+  hi.src=full;
 }
 function closeLB(){
-  document.getElementById('lb').classList.remove('show');
+  var lb=document.getElementById('lb');
+  lb.classList.remove('show','loading');
   if(!document.getElementById('panel').classList.contains('open')) document.body.style.overflow='';
 }
+
+/* 分层预取：① 空闲时预取导图占位图 + 主交付物首页
+   ② 打开某个项目面板时，再补预取该项目里的文档首页（避免开局就拖 1MB） */
+var _pfDone={};
+function prefetchSeq(list){
+  var q=[];
+  for(var j=0;j<list.length;j++){ var u=list[j]; if(u&&!_pfDone[u]){ _pfDone[u]=1; q.push(u); } }
+  var i=0;
+  (function step(){
+    if(i>=q.length) return;
+    var im=new Image();
+    im.onload=im.onerror=function(){ setTimeout(step,60); };
+    im.src=q[i++];
+  })();
+}
+function firstPage(p){ var pg=(window.DOC_PAGES||{})[p]; return (pg&&pg.length)?pg[0]:null; }
+function prefetchPanelDocs(scope){
+  try{ prefetchSeq([].slice.call(scope.querySelectorAll('a.act[href]')).map(function(a){ return firstPage(a.getAttribute('href')); })); }
+  catch(e){}
+}
+function prefetchIdle(){
+  var list=[];
+  try{
+    document.querySelectorAll('.mrow').forEach(function(b){
+      var m=(b.getAttribute('onclick')||'').match(/openImg\('([^']+)'\)/);
+      if(m) list.push(imgThumb(m[1]));
+    });
+    var seen={};
+    document.querySelectorAll('.pbar-files a.pf').forEach(function(a){
+      var p=a.getAttribute('href'); if(!p||seen[p]) return; seen[p]=1;
+      var f=firstPage(p); if(f) list.push(f);
+    });
+  }catch(e){ list=[]; }
+  prefetchSeq(list);
+}
+function schedulePrefetch(){
+  try{
+    var c=navigator.connection||navigator.webkitConnection;
+    if(c&&(c.saveData||/^(slow-)?2g$/.test(c.effectiveType||''))) return;
+  }catch(e){}
+  if(window.requestIdleCallback) requestIdleCallback(prefetchIdle,{timeout:5000});
+  else setTimeout(prefetchIdle,1800);
+}
+if(document.readyState==='complete') schedulePrefetch();
+else window.addEventListener('load',schedulePrefetch);
 
 /* 邮箱 / 微信 / 电话：点开显示 */
 function showVal(id,btn){ if(btn) btn.style.display='none'; var el=document.getElementById(id); if(el) el.classList.add('show'); }
